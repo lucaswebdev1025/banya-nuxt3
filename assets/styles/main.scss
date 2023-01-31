@@ -1,23 +1,22 @@
-
-@import '../styles/vars.scss';
-@import '../styles/common/title.scss';
+@import "../styles/vars.scss";
+@import "../styles/common/title.scss";
 
 //fonts
 @font-face {
-	font-family: 'Gilroy';
-	src: url('/assets/fonts/Gilroy-Black.woff2') format('truetype');
+	font-family: "Gilroy";
+	src: url("/assets/fonts/Gilroy-Black.woff2") format("truetype");
 }
 @font-face {
-	font-family: 'Lato-Regular';
-	src: url('/assets/fonts/Lato-Regular.woff2') format('truetype');
+	font-family: "Lato-Regular";
+	src: url("/assets/fonts/Lato-Regular.woff2") format("truetype");
 }
 @font-face {
-	font-family: 'Lato-Semibold';
-	src: url('/assets/fonts/Lato-Semibold.woff2') format('truetype');
+	font-family: "Lato-Semibold";
+	src: url("/assets/fonts/Lato-Semibold.woff2") format("truetype");
 }
 @font-face {
-	font-family: 'Lato-Bold';
-	src: url('/assets/fonts/Lato-Bold.woff2') format('truetype');
+	font-family: "Lato-Bold";
+	src: url("/assets/fonts/Lato-Bold.woff2") format("truetype");
 }
 
 html {
@@ -36,6 +35,20 @@ body {
 	font-size: $mainFontSize;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
+}
+
+a {
+	text-decoration: none;
+	color: $mainFontColor;
+}
+p{
+	margin: 0;
+}
+ul,
+li {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
 }
 
 .container {
@@ -73,8 +86,8 @@ body {
 	background-color: $mainBackgroundColor;
 	display: flex;
 	flex: 1 0 auto;
-	margin-top: 120px; // if header is fixed do mt: headerHeight
-	@media screen and (max-width: $tableWidth) {
-		margin-top: 90px;
-	}
+	margin-top: 8rem; // if header is fixed do mt: headerHeight
+	// @media screen and (max-width: $tableWidth) {
+	// 	margin-top: 90px;
+	// }
 }
