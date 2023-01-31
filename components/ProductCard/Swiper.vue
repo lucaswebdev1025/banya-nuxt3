@@ -24,20 +24,20 @@
 				alt=""
 				class="product-card-swiper__logo pos"
 			/>
-			<div class="product-card-swiper__play pos">
+			<div class="product-card-swiper__play pos" v-if="premium">
 				<img src="~/assets/img/product-card/play.svg" alt="" />
 			</div>
 
-			<div class="product-card-swiper__arrow arrow-left pos">
+			<div class="product-card-swiper__arrow arrow-left pos" v-if="premium">
 				<IconArrow class="fill" />
 			</div>
-			<div class="product-card-swiper__arrow arrow-right pos">
+			<div class="product-card-swiper__arrow arrow-right pos" v-if="premium">
 				<IconArrow />
 			</div>
 
-			<SliderButton class="product-card-swiper__count pos" />
+			<SliderButton class="product-card-swiper__count pos" v-if="premium" />
 		</div>
-		<div class="product-card-swiper__thumbnail">
+		<div class="product-card-swiper__thumbnail" v-if="premium">
 			<img v-for="(item, idx) in 7" :src="images[idx]" alt="" />
 		</div>
 	</div>

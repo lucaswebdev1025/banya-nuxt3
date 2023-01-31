@@ -13,8 +13,15 @@
 </template>
 
 <style lang="scss" scoped>
+	.fill path {
+		fill: #3e3e51;
+	}
 
-.fill path {
-	fill: #3E3E51;
-}
+	.green  {
+width: 1.4rem;
+		& path {
+			fill: $green-color;
+		}
+		
+	}
 </style>

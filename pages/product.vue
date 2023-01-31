@@ -4,8 +4,8 @@
 	<div class="product-card">
 		<!-- header -->
 		<div class="sub-header">
-			<TheBreadcrumbs />
-			<TheUserAction />
+			<Breadcrumbs />
+			<UserAction />
 		</div>
 		<ProductCardMain />
 	</div>
@@ -30,5 +30,6 @@
 	.sub-header {
 		display: flex;
 		justify-content: space-between;
+		margin: 1.6rem 0;
 	}
 </style>

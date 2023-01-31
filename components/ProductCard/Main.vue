@@ -3,6 +3,8 @@
 <template>
 	<div class="card">
 		<div class="card__top">
+			<div class="card__top-tariff">Бесплатно</div>
+
 			<div class="card__top-left">
 				<div class="card__top-info">Размещено 07.11.2019</div>
 				|
@@ -33,9 +35,21 @@
 			align-items: center;
 			color: $secondary-color;
 			margin-bottom: 5.5rem;
+			position: relative;
+		}
+
+		&__top-tariff {
+			position: absolute;
+			top: 0.5rem;
+			left: -4.5rem;
+			background: #8f99ba;
+			color: white;
+			padding: 1rem;
+			border-radius: 6px 0 0px 0px;
 		}
 
 		&__top-left {
+			padding-left: 6.4rem;
 			display: flex;
 			align-items: center;
 
@@ -56,7 +70,6 @@
 		}
 
 		&__left {
-			max-width: 48rem;
 		}
 
 		&__right {
