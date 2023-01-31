@@ -1,9 +1,9 @@
 <template>
   <div class="wrapper">
-    <!-- <Header /> -->
+    <TheHeader />
     <div class="wrapper-content">
       <slot />
     </div>
-    <!-- <Footer /> -->
+    <TheFooter />
   </div>
 </template>
