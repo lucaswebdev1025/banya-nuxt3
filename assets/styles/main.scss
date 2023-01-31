@@ -1,5 +1,11 @@
+<<<<<<< HEAD
 @import "../styles/vars.scss";
 @import "../styles/common/title.scss";
+=======
+@import '../styles/vars.scss';
+@import '../styles/common/title.scss';
+@import '../styles/common/btns.scss';
+>>>>>>> 99fa94d4f881a44f0f6f1062975d16752244b9e1
 
 //fonts
 @font-face {
@@ -90,4 +96,18 @@ li {
 	// @media screen and (max-width: $tableWidth) {
 	// 	margin-top: 90px;
 	// }
+}
+
+.card {
+	max-width: 138rem;
+	margin: 0 auto;
+	background: $default-color;
+	box-shadow: 0px 11px 48px rgba(123, 129, 148, 0.4);
+	border-radius: 2.3rem;
+	padding: 2.9rem;
+	z-index: 20;
+	position: relative;
+}
+.card-under {
+	padding-top: 7rem;
 }

@@ -4,10 +4,10 @@
 	<div class="product-card">
 		<!-- header -->
 		<div class="sub-header">
-			<TheBreadcrumbs />
-			<TheUserAction />
+			<Breadcrumbs />
+			<UserAction />
 		</div>
-		<SliderButton />
+		<ProductCardMain />
 	</div>
 </template>
 
@@ -18,6 +18,11 @@
 		margin: 0;
 		padding: 0;
 	}
+	img {
+		display: block;
+		max-width: 100%;
+		height: auto;
+	}
 
 	.product-card {
 		width: 100%;
@@ -25,5 +30,6 @@
 	.sub-header {
 		display: flex;
 		justify-content: space-between;
+		margin: 1.6rem 0;
 	}
 </style>
