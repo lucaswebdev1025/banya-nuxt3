@@ -25,6 +25,7 @@
 			</div>
 		</div>
 	</div>
+	<ProductCardBlocked v-if="true" />
 </template>
 
 <style lang="scss" scoped>
@@ -70,6 +71,7 @@
 		}
 
 		&__left {
+			max-width: 52rem;
 		}
 
 		&__right {
