@@ -68,6 +68,7 @@ body {
 }
 
 .wrapper-content {
+  background-color: $mainBackgroundColor;
   display: flex;
   flex: 1 0 auto;
   margin-top: 120px; // if header is fixed do mt: headerHeight
