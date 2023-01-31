@@ -34,10 +34,13 @@ html {
 body {
 	font-family: $mainFont;
 	font-size: $mainFontSize;
+	background-color: $mainBackgroundColor;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 }
-
+button{
+	border:none
+}
 a {
 	text-decoration: none;
 	color: $mainFontColor;
@@ -84,7 +87,6 @@ li {
 }
 
 .wrapper-content {
-	background-color: $mainBackgroundColor;
 	display: flex;
 	flex: 1 0 auto;
 	margin-top: 8rem; // if header is fixed do mt: headerHeight

@@ -1,5 +1,16 @@
-// keep reading btn (green)
+.btn{
+	padding: .7rem 3.8rem;
+	border-radius: 10rem;
+}
 
+.btn-green{
+	background-color: $green-color;
+	color:$default-color
+}
+
+
+
+// keep reading btn (green)
 .keep-read {
 	cursor: pointer;
 	display: flex;
