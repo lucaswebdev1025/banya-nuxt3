@@ -13,7 +13,7 @@
 </template>
 
 <style lang="scss" scoped>
-	@import '~/assets/styles/vars.scss';
+	
 	.user-action {
 		display: flex;
 		align-items: center;
