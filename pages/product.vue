@@ -7,7 +7,7 @@
 			<TheBreadcrumbs />
 			<TheUserAction />
 		</div>
-		<SliderButton />
+		<ProductCardMain />
 	</div>
 </template>
 
