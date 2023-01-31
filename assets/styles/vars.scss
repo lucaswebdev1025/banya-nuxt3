@@ -6,6 +6,7 @@ $mainFont                : 'Lato-Semibold', Helvetica, Arial, sans-serif;
 $mainFontColor           : #3E3E51;
 $mainFontSize            : 1.4rem;
 $mainLineHeight          : 1.5;
+$mainBackgroundColor     : #F5F5F5;
 
 
 $lgDesktopWidth          : 1400px;
@@ -19,22 +20,21 @@ $smPhoneWidth            : 320px;
 
 // Main color
 $default-color           : #ffffff;
-$primary-color           : #4468e0;
-$success-color           : #26de81;
-$danger-color            : #fc5c65;
-$warning-color           : #fed330;
-$light-color             : #999999;
-$purple-color            : #8854d0;
-$purple-color-100        : #aa8ad6;
+$secondary-color         : #8F99BA;
+$green-color             : #17A300;
+$red-color               : #EB5757;
+$vip-color               : #FABA17;
+$gray-color              : #7A7A7A;
+$purple-color            : #9B51E0;
 
 // Neutral Color
-$neutral-primary         : #303133;
-$neutral-regular         : #606266;
-$neutral-secondary       : #909399;
-$neutral-placeholder     : #C0C4CC;
+// $neutral-primary         : #303133;
+// $neutral-regular         : #606266;
+// $neutral-secondary       : #909399;
+// $neutral-placeholder     : #C0C4CC;
 
 // Border Color
-$border-base             : #DCDFE6;
-$border-light            : #E4E7ED;
-$border-lighter          : #EBEEF5;
-$border-lightex          : #F2F6FC;
+// $border-base             : #DCDFE6;
+// $border-light            : #E4E7ED;
+// $border-lighter          : #EBEEF5;
+// $border-lightex          : #F2F6FC;
