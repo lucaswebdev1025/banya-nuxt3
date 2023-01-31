@@ -19,7 +19,7 @@
 				<ProductCardLeftFirst />
 			</div>
 			<div class="card__right">
-				
+				<ProductCardSwiper />
 			</div>
 		</div>
 	</div>
@@ -51,12 +51,16 @@
 		}
 
 		&__content {
+			display: flex;
+			gap: 3.3rem;
 		}
 
 		&__left {
+			max-width: 48rem;
 		}
 
 		&__right {
+			width: 100%;
 		}
 	}
 </style>
