@@ -26,6 +26,8 @@
 		</div>
 	</div>
 	<ProductCardBlocked v-if="true" />
+	<ProductCardService />
+	<ProductCardReview />
 </template>
 
 <style lang="scss" scoped>
@@ -37,16 +39,6 @@
 			color: $secondary-color;
 			margin-bottom: 5.5rem;
 			position: relative;
-		}
-
-		&__top-tariff {
-			position: absolute;
-			top: 0.5rem;
-			left: -4.5rem;
-			background: #8f99ba;
-			color: white;
-			padding: 1rem;
-			border-radius: 6px 0 0px 0px;
 		}
 
 		&__top-left {
