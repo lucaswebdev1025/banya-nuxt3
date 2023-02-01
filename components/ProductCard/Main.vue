@@ -25,12 +25,16 @@
 			</div>
 		</div>
 	</div>
-	<ProductCardBlocked v-if="true" />
-	<ProductCardService />
-	<ProductCardReview />
+	<ProductCardBlocked class="no-box" v-if="true" />
+	<ProductCardService class="no-box" />
+	<ProductCardReview class="no-box" />
+	<ProductCardRelated class="no-box" />
 </template>
 
 <style lang="scss" scoped>
+	.no-box {
+		box-shadow: none;
+	}
 	.card {
 		&__top {
 			display: flex;

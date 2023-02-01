@@ -3,7 +3,7 @@
 	import img2 from '~/assets/img/product-card/service2.png';
 	import img3 from '~/assets/img/product-card/service3.png';
 
-	const service = [
+	const service = ref([
 		{
 			title: 'SPA-клуб на метро Крестьянкая застава',
 			price: false,
@@ -36,7 +36,7 @@
 			desc: 'Особое - спина-живот | Медовое - 2 парения «Особое» без перерыва | Королевское - 3 парения «Особ...',
 			img: img3,
 		},
-	];
+	]);
 </script>
 
 <template>
