@@ -1,11 +1,16 @@
 .btn{
 	padding: .7rem 3.8rem;
 	border-radius: 10rem;
+	cursor:pointer;
 }
 
 .btn-green{
 	background-color: $green-color;
-	color:$default-color
+	color:$default-color;
+	transition: all .2s ease;
+	&:hover{
+		background-color:darken($color: $green-color, $amount: 5%)
+	}
 }
 
 
