@@ -1,3 +1,7 @@
+<script lang="ts" setup>
+let isActive = ref(false);
+</script>
+
 <template>
   <header class="header">
     <div class="container">
@@ -5,29 +9,28 @@
         <NuxtLink to="/" class="header__logo">
           <img src="@/assets/img/logo.png" alt="Баня" />
         </NuxtLink>
-        <div class="city-select">
-          <img src="@/assets/img/icon/geo.svg" alt="" />
-          <span>Москва</span>
-          <div class="city-select__icon"></div>
-        </div>
+        <TheHeaderCitySelect />
         <div class="menu-items">
           <ul class="nav">
-          <li class="nav__item">Снять</li>
-          <li class="nav__item">Услуги</li>
-          <li class="nav__item">Купить</li>
-        </ul>
-        <ul class="nav-icons">
-          <li class="nav-icons__item">
-            <img src="@/assets/img/icon/messages.png" alt="" />
-          </li>
-          <li class="nav-icons__item">
-            <img src="@/assets/img/icon/favorite.png" alt="" />
-          </li>
-          <li class="nav-icons__item">
-            <img src="@/assets/img/icon/cart.png" alt="" />
-            <span class="counter">3</span>
-          </li>
-        </ul>
+            <li @click="isActive = !isActive" class="nav__item">Снять</li>
+            <transition name="fade">
+              <TheHeaderDropdownMenu v-if="isActive" />
+            </transition>
+            <li class="nav__item">Услуги</li>
+            <li class="nav__item">Купить</li>
+          </ul>
+          <ul class="nav-icons">
+            <li class="nav-icons__item">
+              <img src="@/assets/img/icon/messages.png" alt="" />
+            </li>
+            <li class="nav-icons__item">
+              <img src="@/assets/img/icon/favorite.png" alt="" />
+            </li>
+            <li class="nav-icons__item">
+              <img src="@/assets/img/icon/cart.png" alt="" />
+              <span class="counter">3</span>
+            </li>
+          </ul>
         </div>
         <div class="nav-btns">
           <button class="btn btn-green">Разместить объявление</button>
@@ -42,6 +45,19 @@
 </template>
 
 <style lang="scss" scoped>
+.fade-enter-active,
+.fade-leave-active {
+  transition: all 0.5s ease;
+}
+.fade-enter-from,
+.fade-leave-to {
+  transform: translateY(-2rem);
+  opacity: 0;
+}
+.slide-fade-enter,
+.slide-fade-leave-to {
+  opacity: 0;
+}
 .header {
   position: fixed;
   top: 0;
@@ -57,44 +73,18 @@
     // justify-content: space-between;
     height: 8rem;
   }
-}
-
-.city-select {
-  cursor:pointer;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-left: 3.1rem;
-  padding: 0.8rem 0.9rem;
-  max-width: 20rem;
-  width: 100%;
-  box-shadow: 1px 7px 21px rgba(166, 175, 205, 0.22);
-  border-radius: $mainBorderRadius;
-  & span {
-    color: $green-color;
-    font-family: "Lato-Bold";
-  }
-  &__icon{
-    position: relative;
-    width: 2.4rem;
-    height: 2.4rem;
-    box-shadow: 1px 4px 12px rgba(166, 175, 205, 0.36);
-    border-radius: 2rem;
-    &::after{
-      content:'';
-      width: 1.4rem;
-      height: .8rem;
-      position: absolute;
-      left: 20%;
-      top: 40%;
-      background-size: cover;
-      background-repeat: no-repeat;
-      background-image: url("@/assets/img/icon/select.svg");
+  &__logo {
+    & img {
+      max-width: 13.3rem;
+      width: 100%;
+      height: auto;
     }
   }
 }
-.menu-items{
+
+.menu-items {
   display: flex;
+  align-items: center;
   gap: 13.8rem;
   margin: 0 auto;
 }
@@ -102,8 +92,10 @@
   display: flex;
   gap: 2.8rem;
   align-items: center;
+  &__item {
+    cursor: pointer;
+  }
 }
-
 .nav-icons {
   display: flex;
   align-items: center;
@@ -111,8 +103,10 @@
 
   &__item {
     position: relative;
-    & img{
+    & img {
       width: 100%;
+      max-width: 2.7rem;
+      height: auto;
     }
     &:nth-child(2):after {
       content: "";
@@ -153,11 +147,12 @@
 }
 .nav-btns {
   display: flex;
-  margin-left:auto;
+  margin-left: auto;
   align-items: center;
   gap: 2.3rem;
-  & .btn{
-    padding: .75rem 2rem;
+  padding-right: 3.2rem;
+  & .btn {
+    padding: 0.75rem 2rem;
     font-size: 1.6rem;
   }
   & .btn-login {
