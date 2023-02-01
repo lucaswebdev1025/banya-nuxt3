@@ -2,7 +2,7 @@
 	import man from '~/assets/img/review/man-avatar.jpg';
 	import girl from '~/assets/img/review/girl-avatar.jpg';
 
-	const reviews = [
+	const reviews = ref([
 		{
 			name: 'ID:42313',
 			text: 'Отличные бани. Цена-качество на уровне!',
@@ -15,7 +15,7 @@
 			date: '06.09.2021',
 			img: girl,
 		},
-	];
+	]);
 </script>
 
 <template>
@@ -45,7 +45,9 @@
 				/>
 			</form>
 			<div class="card-service__all h3-lite">
-				Показать все отзывы <IconArrow class="green" />
+				<div class="card-service__all-item">
+					Показать все отзывы <IconArrow class="green" />
+				</div>
 			</div>
 		</div>
 	</div>
@@ -79,8 +81,6 @@
 			padding: 0 2.2rem;
 		}
 
-		
-
 		&__input {
 			box-sizing: border-box;
 			display: block;
@@ -90,15 +90,19 @@
 			width: 100%;
 			padding: 1rem 2rem 3rem;
 			margin-bottom: 2.5rem;
+			outline: none;
 		}
 
 		&__all {
-			cursor: pointer;
-			color: $green-color;
 			display: flex;
 			align-items: center;
 			justify-content: flex-end;
 			gap: 1rem;
+
+			&-item {
+				cursor: pointer;
+				color: $green-color;
+			}
 		}
 	}
 </style>

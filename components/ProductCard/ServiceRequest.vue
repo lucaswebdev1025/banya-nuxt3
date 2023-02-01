@@ -63,7 +63,7 @@
 	</div>
 </template>
 
-<style lang="scss" scoped>
+<style lang="scss">
 	.card-item {
 		&__content {
 			display: flex;
