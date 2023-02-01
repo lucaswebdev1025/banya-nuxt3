@@ -1,19 +1,17 @@
-.btn{
-	padding: .7rem 3.8rem;
+.btn {
+	padding: 0.7rem 3.8rem;
 	border-radius: 10rem;
-	cursor:pointer;
+	cursor: pointer;
 }
 
-.btn-green{
+.btn-green {
 	background-color: $green-color;
-	color:$default-color;
-	transition: all .2s ease;
-	&:hover{
-		background-color:darken($color: $green-color, $amount: 5%)
+	color: $default-color;
+	transition: all 0.2s ease;
+	&:hover {
+		background-color: darken($color: $green-color, $amount: 5%);
 	}
 }
-
-
 
 // keep reading btn (green)
 .keep-read {
@@ -37,5 +35,31 @@
 		width: 100%;
 		background-color: #e1e5f2;
 		transform: translateY(-50%);
+	}
+}
+
+// swiper btn
+
+.swiper-btn {
+	background: $default-color;
+	box-shadow: 1px 7px 21px rgba(166, 175, 205, 0.16);
+	border-radius: 10rem;
+	display: flex;
+	align-items: center;
+	gap: 2rem;
+	padding: 1.8rem 2.8rem;
+
+	&__arr {
+		width: 2rem;
+		height: 100%;
+		cursor: pointer;
+
+		&:first-child {
+			transform: rotate(180deg);
+		}
+	}
+
+	&__line {
+		height: 100%;
 	}
 }
