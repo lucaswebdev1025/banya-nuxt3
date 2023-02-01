@@ -1,147 +1,95 @@
 <script setup>
-	defineProps({
-		title: {
-			type: String,
+	import img1 from '~/assets/img/product-card/service1.png';
+	import img2 from '~/assets/img/product-card/service2.png';
+	import img3 from '~/assets/img/product-card/service3.png';
+
+	const service = [
+		{
+			title: 'SPA-клуб на метро Крестьянкая застава',
+			price: false,
+			logo: false,
+			place: false,
+			desc: false,
+			img: false,
 		},
-		price: {
-			type: Boolean,
-			default: false,
+		{
+			title: 'SPA-клуб на метро Крестьянкая застава',
+			price: 2300,
+			logo: false,
+			place: false,
+			desc: false,
+			img: img1,
 		},
-		logo: {
-			type: Boolean,
-			default: false,
+		{
+			title: 'SPA-клуб на метро Крестьянкая застава',
+			price: 4300,
+			logo: true,
+			place: '7 залов',
+			desc: 'Особое - спина-живот | Медовое - 2 парения «Особое» без перерыва | Королевское - 3 парения «Особ...',
+			img: img2,
 		},
-		place: {
-			type: Boolean,
-			default: false,
+		{
+			title: 'SPA-клуб на метро Крестьянкая застава',
+			price: 6800,
+			logo: true,
+			place: '7 залов',
+			desc: 'Особое - спина-живот | Медовое - 2 парения «Особое» без перерыва | Королевское - 3 парения «Особ...',
+			img: img3,
 		},
-		desc: {
-			type: Boolean,
-			default: false,
-		},
-		img: {
-			type: Boolean,
-			default: false,
-		},
-	});
+	];
 </script>
 
 <template>
-	<div class="card-item__content">
-		<div class="card-item__img">
-			<img v-if="img" :src="img" alt="" />
+	<div class="card card-item">
+		<div class="card-item__left">
+			<div class="card-item__top">
+				<div class="card-item__title h2">Сауны и бани с массжем в Москве</div>
+				<div class="card-item__text h5">
+					Сауны бани с массажем - мы нашли для вас 550 саун <br />
+					и бань в городе Москва
+				</div>
+			</div>
+			<ProductCardServiceRequest
+				v-for="item in service"
+				:title="item.title"
+				:desc="item.desc"
+				:logo="item.logo"
+				:price="item.price"
+				:place="item.place"
+				:img="item.img"
+			/>
 		</div>
-		<div class="card-item__info">
-			<div class="card-item__info-top">
-				<div class="card-item__name h4">
-					<img
-						v-if="logo"
-						src="~/assets/img/product-card/card-logo.svg"
-						alt=""
-					/>
-					{{ title }}
-				</div>
-				<div class="card-item__price" v-if="price">
-					от {{ price }} <span class="h5-mini">р.</span>
-				</div>
-			</div>
-
-			<div class="card-item__what h5-mini">
-				<div class="card-item__what-text">Сауны и бани - Массаж</div>
-				<div class="card-item__what-place" v-if="place">({{ place }})</div>
-			</div>
-			<div class="card-item__review">
-				<Stars />
-				<div class="card-item__feedback">
-					11 <img src="~/assets/img/icon/comment.svg" alt="" />
-				</div>
-			</div>
-			<div class="card-item__desc h5" v-if="desc">
-				{{ desc }}
-			</div>
+		<div class="card-item__right">
+			<!-- map -->
 		</div>
 	</div>
 </template>
 
 <style lang="scss" scoped>
 	.card-item {
-		&__content {
-			display: flex;
-			gap: 2rem;
-			padding: 2rem;
-			border-radius: 1.2rem;
-			&:hover {
-				box-shadow: 0px 11px 48px rgba(123, 129, 148, 0.4);
-			}
+		margin-top: 2rem;
+		display: flex;
+		gap: 2rem;
+		&__left {
+			width: 100%;
 		}
 
-		&__img {
-			min-width: 150px;
+		&__top {
+			padding-bottom: 1rem;
+			border-bottom: 1px solid #e1e5f2;
 		}
 
-		&__info {
-			flex: 1;
-			padding-bottom: 1.5rem;
-		}
-
-		&__info-top {
-			display: flex;
-			justify-content: space-between;
-			align-items: center;
-		}
-
-		&__name {
+		&__title {
 			color: $mainFontColor;
-			margin-bottom: 1rem;
-			display: flex;
-			align-items: center;
-			gap: 1.5rem;
+			margin-bottom: 3px;
 		}
 
-		&__price {
-			font-size: 1.6rem;
-			font-weight: 700;
-			color: $green-color;
-
-			& span {
-				color: $green-color;
-			}
-		}
-
-		&__what {
-			display: flex;
-			align-items: center;
-			gap: 0.5rem;
-			margin-bottom: 1rem;
-		}
-
-		&__what-text {
+		&__text {
 			color: $secondary-color;
 		}
 
-		&__what-place {
-			color: $green-color;
-		}
-
-		&__review {
-			display: flex;
-			align-items: center;
-			gap: 1rem;
-			margin-bottom: 1.5rem;
-		}
-
-		&__feedback {
-			display: flex;
-			align-items: center;
-			font-family: 'Montserrat';
-			font-weight: 500;
-			font-size: 1rem;
-
-			color: #9da7c7;
-		}
-
-		&__desc {
-			color: $secondary-color;
+		&__right {
+			width: 65rem;
 		}
 	}
 </style>
