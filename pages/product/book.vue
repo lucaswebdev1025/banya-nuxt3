@@ -6,6 +6,7 @@
 		<div class="card__content">
 			<div class="card__left">
 				<ProductBookFirst />
+				<ProductBookSecond />
 			</div>
 			<div class="card__right">
 				<ProductCardSwiper :premium="true" />
