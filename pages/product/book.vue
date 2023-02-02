@@ -1,15 +1,20 @@
-<script setup>
-
-</script>
-
-
+<script setup></script>
 
 <template>
-	123123
+	<div class="card">
+		<ProductCardTop badje="book" badjeText="Бронь" />
+		<div class="card__content">
+			<div class="card__left">
+				<ProductCardLeftFirst />
+			</div>
+			<div class="card__right">
+				<ProductCardSwiper />
+			</div>
+		</div>
+	</div>
+	<ProductCardService class="no-box" />
+	<ProductCardReview class="no-box" />
+	<ProductCardRelated class="no-box" />
 </template>
 
-
-
-<style lang='scss' scoped>
-
-</style>
+<style lang="scss" scoped></style>
