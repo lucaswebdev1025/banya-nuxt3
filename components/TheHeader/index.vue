@@ -12,8 +12,14 @@ let isActive = ref(false);
         <TheHeaderCitySelect />
         <div class="menu-items">
           <ul class="nav">
-            <li @click="isActive = !isActive" class="nav__item">Снять</li>
-            <transition name="fade">
+            <li
+              @click="isActive = !isActive"
+              :class="[isActive ? 'nav__item_active' : '']"
+              class="nav__item"
+            >
+              Снять
+            </li>
+            <transition @close="() => (isActive = false)" name="fade">
               <TheHeaderDropdownMenu v-if="isActive" />
             </transition>
             <li class="nav__item">Услуги</li>
@@ -94,6 +100,21 @@ let isActive = ref(false);
   align-items: center;
   &__item {
     cursor: pointer;
+    position: relative;
+    &_active {
+      &::after {
+        content: "";
+        width: 100%;
+        height: 0.4rem;
+        position: absolute;
+        top: 4.7rem;
+        left: 0;
+        right: 0;
+        opacity: 1;
+        background: $green-color;
+        border-radius: 2px 2px 0px 0px;
+      }
+    }
   }
 }
 .nav-icons {
