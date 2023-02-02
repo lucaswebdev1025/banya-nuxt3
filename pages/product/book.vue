@@ -5,10 +5,10 @@
 		<ProductCardTop badje="book" badjeText="Бронь" />
 		<div class="card__content">
 			<div class="card__left">
-				<ProductCardLeftFirst />
+				<ProductBookFirst />
 			</div>
 			<div class="card__right">
-				<ProductCardSwiper />
+				<ProductCardSwiper :premium="true" />
 			</div>
 		</div>
 	</div>
@@ -17,4 +17,4 @@
 	<ProductCardRelated class="no-box" />
 </template>
 
-<style lang="scss" scoped></style>
+<style lang="scss"></style>

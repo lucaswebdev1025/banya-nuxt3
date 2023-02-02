@@ -41,36 +41,9 @@
 
 <style lang="scss" scoped>
 	.card {
-		&__name {
-			color: $mainFontColor;
-			margin-bottom: 0.5rem;
-		}
+		
 
-		&__review {
-			display: flex;
-			align-items: center;
-			gap: 1.3rem;
-			color: $secondary-color;
-			margin-bottom: 1.3rem;
-		}
-
-		&__stars {
-			display: flex;
-			align-items: center;
-
-			& span {
-				color: #9da7c7;
-				margin-left: 1rem;
-			}
-		}
-
-		&__star {
-		}
-
-		&__feedback {
-			color: $green-color;
-			text-decoration: underline;
-		}
+		
 
 		&__info {
 			display: flex;
@@ -90,16 +63,6 @@
 				display: flex;
 				align-items: center;
 				gap: 0.6rem;
-			}
-		}
-
-		&__open {
-			color: $red-color;
-			font-weight: 500;
-			font-size: 1.4rem;
-			margin-bottom: 1.1rem;
-			& span {
-				font-weight: 900;
 			}
 		}
 
