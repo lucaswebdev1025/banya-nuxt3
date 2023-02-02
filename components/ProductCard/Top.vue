@@ -2,8 +2,16 @@
 	defineProps({
 		badje: {
 			type: String,
+			default: 'free',
 			validator(value) {
 				return ['free', 'vip', 'book'].includes(value);
+			},
+		},
+		badjeText: {
+			type: String,
+			default: 'Бесплатно',
+			validator(value) {
+				return ['Бесплатно', 'Бронь', 'VIP'].includes(value);
 			},
 		},
 	});
@@ -11,7 +19,7 @@
 
 <template>
 	<div class="card__top">
-		<div class="card__top-tariff">Бесплатно</div>
+		<div class="card__top-tariff" :class="badje">{{ badjeText }}</div>
 
 		<div class="card__top-left">
 			<div class="card__top-info">Размещено 07.11.2019</div>
