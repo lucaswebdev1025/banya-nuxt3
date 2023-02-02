@@ -7,6 +7,13 @@
 	import img6 from '~/assets/img/product-card/6.png';
 	import img7 from '~/assets/img/product-card/6.png';
 
+	defineProps({
+		premium: {
+			type: Boolean,
+			default: false,
+		},
+	});
+
 	const images = ref([img1, img2, img3, img4, img5, img6, img7]);
 </script>
 

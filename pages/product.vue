@@ -7,7 +7,7 @@
 			<Breadcrumbs />
 			<UserAction />
 		</div>
-		<ProductCardMain />
+		<NuxtPage />
 	</div>
 </template>
 
