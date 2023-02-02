@@ -32,7 +32,11 @@
 		древнем бревенчатом стиле контрастирует с европейский газон с бассейном....
 	</div>
 	<div class="card__read keep-read">Читать всё <IconArrow class="green" /></div>
-	<div class="card__btn btn">+7 498 289 89 ...</div>
+	<div class="card__btn">
+		<button class="card__btn-item btn btn-green h2-lite">
+			+7 498 289 89 ...
+		</button>
+	</div>
 </template>
 
 <style lang="scss" scoped>
@@ -102,6 +106,11 @@
 		&__text {
 			color: #8f99ba;
 			margin-bottom: 2rem;
+		}
+
+		&__btn-item {
+			padding-top: 1.4rem;
+			padding-bottom: 1.4rem;
 		}
 	}
 </style>
