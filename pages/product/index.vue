@@ -18,22 +18,4 @@
 	<ProductCardRelated class="no-box" />
 </template>
 
-<style lang="scss">
-	.no-box {
-		box-shadow: none !important;
-	}
-	.card {
-		&__content {
-			display: flex;
-			gap: 3.3rem;
-		}
-
-		&__left {
-			max-width: 52rem;
-		}
-
-		&__right {
-			width: 100%;
-		}
-	}
-</style>
+<style lang="scss"></style>

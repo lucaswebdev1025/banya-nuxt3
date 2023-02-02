@@ -125,7 +125,7 @@
 			margin-top: 1.6rem;
 
 			& img {
-				max-width: 10.1rem;
+				max-width: 15.1rem;
 				width: 100%;
 				border: 2px solid transparent;
 				transition: all 0.2s linear;
