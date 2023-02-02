@@ -1,5 +1,76 @@
 <script lang="ts" setup>
 let isActive = ref(false);
+
+const BathsDropdownMenu = {
+  linksBaths: [
+    {
+      name: "Баня",
+      src: "/asd",
+    },
+    {
+      name: "Сауна",
+      src: "/asd",
+    },
+    {
+      name: "Хаммам",
+      src: "/",
+    },
+    {
+      name: "Баня на дровах",
+      src: "/asd",
+    },
+    {
+      name: "Баня по-черному",
+      src: "/asd",
+    },
+    {
+      name: "Японская / афуро",
+      src: "/asd",
+    },
+    {
+      name: "Банный чан",
+      src: "/asd",
+    },
+    {
+      name: "Кедровая бочка",
+      src: "/asd",
+    },
+    {
+      name: "Инфракрасная",
+      src: "/asd",
+    },
+    {
+      name: "Римские / Термы",
+      src: "/asd",
+    },
+    {
+      name: "Общественные бани",
+      src: "/asd",
+    },
+    {
+      name: "Автобаня",
+      src: "/asd",
+    },
+    {
+      name: "Баня на воде",
+      src: "/asd",
+    },
+  ],
+  linksRooms: [
+    {
+      name: "На час",
+      src: "/asd",
+    },
+    {
+      name: "На ночь",
+      src: "/asd",
+    },
+    {
+      name: "Посуточно",
+      src: "/asd",
+    },
+  ],
+};
 </script>
 
 <template>
@@ -19,11 +90,15 @@ let isActive = ref(false);
             >
               Снять
             </li>
-            <transition @close="() => (isActive = false)" name="fade">
-              <TheHeaderDropdownMenu v-if="isActive" />
-            </transition>
             <li class="nav__item">Услуги</li>
             <li class="nav__item">Купить</li>
+            <transition name="fade">
+              <TheHeaderDropdownMenu
+                :menu="BathsDropdownMenu"
+                @close="() => (isActive = false)"
+                v-if="isActive"
+              />
+            </transition>
           </ul>
           <ul class="nav-icons">
             <li class="nav-icons__item">

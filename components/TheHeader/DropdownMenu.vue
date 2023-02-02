@@ -1,72 +1,12 @@
-<script lang="ts" setup>
-const linksRooms = [
-  {
-    name: "На час",
-    src: "/asd",
+<script setup>
+
+defineProps({
+  menu: {
+    type: Object,
+    required: true
   },
-  {
-    name: "На ночь",
-    src: "/asd",
-  },
-  {
-    name: "Посуточно",
-    src: "/asd",
-  },
-];
-const linksBaths = [
-  {
-    name: "Баня",
-    src: "/asd",
-  },
-  {
-    name: "Сауна",
-    src: "/asd",
-  },
-  {
-    name: "Хаммам",
-    src: "/",
-  },
-  {
-    name: "Баня на дровах",
-    src: "/asd",
-  },
-  {
-    name: "Баня по-черному",
-    src: "/asd",
-  },
-  {
-    name: "Японская / афуро",
-    src: "/asd",
-  },
-  {
-    name: "Банный чан",
-    src: "/asd",
-  },
-  {
-    name: "Кедровая бочка",
-    src: "/asd",
-  },
-  {
-    name: "Инфракрасная",
-    src: "/asd",
-  },
-  {
-    name: "Римские / Термы",
-    src: "/asd",
-  },
-  {
-    name: "Общественные бани",
-    src: "/asd",
-  },
-  {
-    name: "Автобаня",
-    src: "/asd",
-  },
-  {
-    name: "Баня на воде",
-    src: "/asd",
-  },
-];
+})
+
 </script>
 
 <template>
@@ -77,7 +17,7 @@ const linksBaths = [
         <div class="menu__item">
           <ul class="nav">
             <h4 class="nav__title">Бани</h4>
-            <li v-for="link in linksBaths" class="nav__item">
+            <li v-for="link in menu.linksBaths" class="nav__item">
               <nuxt-link class="nav__link" :to="link.src">{{
                 link.name
               }}</nuxt-link>
@@ -87,7 +27,7 @@ const linksBaths = [
         <div class="menu__item">
           <ul class="nav">
             <h4 class="nav__title">Номера</h4>
-            <li v-for="link in linksRooms" class="nav__item">
+            <li v-for="link in menu.linksRooms" class="nav__item">
               <nuxt-link class="nav__link" :to="link.src">{{
                 link.name
               }}</nuxt-link>
