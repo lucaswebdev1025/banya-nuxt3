@@ -4,7 +4,7 @@
 	<div class="book-card-sec">
 		<div class="book-card-sec__top">
 			<div class="book-card-sec__title">
-				<div class="book-card-sec__name h1">Зал</div>
+				<div class="book-card-sec__name card__name h1">Зал</div>
 				<div class="book-card-sec__text h4">Баня на дровах</div>
 			</div>
 			<div class="book-card-sec__all h4">Все</div>
@@ -30,7 +30,7 @@
 
 <style lang="scss" scoped>
 	.book-card-sec {
-		border-bottom: 1px solid #E1E5F2;
+		border-bottom: 1px solid #e1e5f2;
 		padding-bottom: 3.5rem;
 		padding-top: 3.5rem;
 		&__top {
