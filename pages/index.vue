@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-   <Filter/>
+    <Filter />
+    <HomeSlider/>
   </div>
 </template>
-
