@@ -5,7 +5,7 @@
 		<div class="container">
 			<!-- header -->
 			<div class="sub-header">
-				<Breadcrumbs />
+				<UIBreadcrumbs />
 				<UserAction />
 			</div>
 			<NuxtPage />
