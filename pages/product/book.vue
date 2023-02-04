@@ -31,7 +31,8 @@
 			</div>
 		</div>
 	</div>
-	<ProductBookPrice class="no-box card-under" />
+	<ProductBookPrice class="card-under" />
+	<ProductBookSales class="card-under" />
 	<ProductCardService class="no-box" />
 	<ProductCardReview class="no-box" />
 	<ProductCardRelated class="no-box" />
