@@ -80,25 +80,5 @@
 		}
 	}
 
-	.card-bottom-btn {
-		padding-top: 5.5rem;
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
-		&__left {
-			display: flex;
-			align-items: center;
-			gap: 1.5rem;
-			& * {
-				padding-top: 1.5rem;
-				padding-bottom: 1.5rem;
-			}
-		}
-
-		&__right {
-			display: flex;
-			align-items: center;
-			gap: 1.5rem;
-		}
-	}
+	
 </style>
