@@ -76,7 +76,6 @@ defineProps(["type", "name", "img", "metro", "walk", "price"]);
       display: flex;
       flex-direction: column;
       margin-left: -5%;
-      margin-top: 2%;
       .card-related__action {
         display: none;
       }
