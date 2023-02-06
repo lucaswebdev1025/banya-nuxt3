@@ -1,14 +1,22 @@
-<script setup>
-	import productItemData from '~~/composables/productItemData';
-</script>
+<script setup></script>
 
 <template>
 	<div class="card">
-		<ProductCardTop badje="book" badjeText="Бронь" />
+		<ProductCardTop badje="vip" badjeText="VIP" />
 		<div class="card__content">
 			<div class="card__left">
-				<ProductBookFirst />
-				<ProductBookSecond />
+				<ProductVipFirst />
+				<ProductVipSecond />
+				<div class="vip-card-third">
+					<div class="vip-card-third__text h4">
+						А Сибирский сруб рядом! Для этого не нужно ехать за 5000 километров.
+						<br />
+						У вас есть уникальная возможность принять комплекс настоящих
+					</div>
+					<div class="card__read keep-read">
+						Читать всё <IconArrow class="green" />
+					</div>
+				</div>
 			</div>
 			<div class="card__right">
 				<ProductCardSwiper :premium="true" />
@@ -55,30 +63,12 @@
 	<ProductCardRelated class="no-box" />
 </template>
 
-<style lang="scss">
-	.card-hall {
-		z-index: 8;
-	}
-	.card-service {
-		z-index: 7;
-	}
-	.card-bath {
-		z-index: 6;
-	}
-
-	.card-desc {
-		padding-top: 3.5em;
-		display: flex;
-		gap: 1rem;
-		&__left {
-			width: 100%;
-			max-width: 54rem;
-		}
-
-		&__right {
-			width: 100%;
+<style lang="scss" scoped>
+	.vip-card-third {
+		padding-top: 3rem;
+		&__text {
+			color: $secondary-color;
+			margin-bottom: 3rem;
 		}
 	}
-
-	
 </style>
