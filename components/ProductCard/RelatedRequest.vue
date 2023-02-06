@@ -199,7 +199,7 @@ defineProps(["type", "name", "img", "metro", "walk", "price"]);
 
   &__name {
     flex: 1 auto;
-    margin-bottom: 1.4rem;
+    margin-bottom: 3rem;
     color: $mainFontColor;
   }
   &__bottom {
