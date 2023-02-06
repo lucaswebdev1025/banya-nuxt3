@@ -56,8 +56,12 @@ const relatedProduct = ref([
         :price="item.price"
         class=""
       />
-      <div class="popular__adv">
-
+      <div class="popular__adv adv">
+        <div class="adv__text">
+          <span>Реклама</span>
+          <h3>Гостевые домики Сан-Поль</h3>
+        </div>
+        <div class="adv__price">22 300 руб.</div>
       </div>
     </div>
   </div>
@@ -72,15 +76,41 @@ const relatedProduct = ref([
     display: flex;
     gap: 2rem;
   }
-  &__cart{
+  &__cart {
     background: $default-color;
     border-radius: 23px;
     padding: 1rem 2rem 2rem 2rem;
   }
-  &__adv{
-    background-image: url(@/assets/img/home/adv.png);
-    background-repeat: no-repeat;
-    flex: 1 1 20%;
+}
+.adv {
+  background-image: url(@/assets/img/home/adv.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  border-radius: 23px;
+  display: flex;
+  justify-content: space-between;
+  padding: 3.5rem 4.2rem;
+  width: 33%;
+  &__text {
+    display: flex;
+    flex-direction: column;
+    & span{
+      color: #8F99BA;
+      margin-bottom: .7rem;
+    }
+    & h3{
+      color: $default-color;
+      font-weight: 700;
+    }
+  }
+  &__price {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    color:$green-color;
+    font-weight: 700;
+    font-size: 2.8rem;
   }
 }
 .nav {
