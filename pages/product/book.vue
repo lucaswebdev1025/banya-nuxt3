@@ -35,6 +35,7 @@
 	</div>
 	<ProductBookPrice class="card-under" />
 	<ProductBookSales class="card-under" />
+	<ProductBookDetail class="card-under" />
 	<ProductBookItems
 		class="card-hall"
 		title="Залы"
@@ -57,13 +58,13 @@
 
 <style lang="scss">
 	.card-hall {
-		z-index: 8;
+		z-index: 5;
 	}
 	.card-service {
-		z-index: 7;
+		z-index: 4;
 	}
 	.card-bath {
-		z-index: 6;
+		z-index: 3;
 	}
 
 	.card-desc {
