@@ -19,13 +19,19 @@ defineProps(["type", "name", "img", "metro", "walk", "price"]);
       <div class="card-related__img">
         <img :src="img" alt="" />
         <div class="card-related__play">
-          <img src="~/assets/img/product-card/play.svg" alt="" />
+          <!-- <img src="~/assets/img/product-card/play.svg" alt="" /> -->
         </div>
         <button class="btn btn-white card-related__btn">Подробнее</button>
       </div>
-      <div class="card-related__info">
+      <div class="card-related__hover">
+        <div class="card-related__name h3">{{ name }}</div>
+        <div class="card-related__price h3">{{ price }} руб.</div>
+      </div>
+      <div class="card-related__top">
         <div class="card-related__what h4">{{ type }}</div>
         <div class="card-related__name h3">{{ name }}</div>
+      </div>
+      <div class="card-related__bottom">
         <div class="card-related__metro">
           <div class="card-related__metro-text h4">
             <img src="~/assets/img/icon/metro.svg" alt="" />
@@ -42,20 +48,23 @@ defineProps(["type", "name", "img", "metro", "walk", "price"]);
 <style lang="scss" scoped>
 .card-related {
   &__column {
+    display: flex;
+    align-items: stretch;
     flex: 1;
   }
 
   &__btn {
     display: none;
-		visibility: hidden;
   }
 
   &__item {
+    display: flex;
+    flex-direction: column;
     border-radius: 23px;
     background: $default-color;
     padding: 1rem 1.9rem 1.9rem 2rem;
-		transition: transform 0.3s ease-in ;
-		position: relative;
+    transition: transform 0.3s ease-in;
+    position: relative;
     &:hover {
       background: #ffffff;
       box-shadow: 0px 6px 56px rgba(123, 129, 148, 0.48);
@@ -66,30 +75,32 @@ defineProps(["type", "name", "img", "metro", "walk", "price"]);
       padding: 0;
       display: flex;
       flex-direction: column;
-			margin-left: -5%;
-			margin-top: 2%;
+      margin-left: -5%;
+      margin-top: 2%;
       .card-related__action {
         display: none;
-				visibility: hidden;
       }
-
       .card-related__metro {
         display: none;
-				visibility: hidden;
       }
 
       .card-related__what {
         display: none;
-				visibility: hidden;
+      }
+      .card-related__bottom {
+        display: none;
+      }
+      .card-related__top {
+        display: none;
       }
 
-      .card-related__info {
+      .card-related__hover {
         display: flex;
         justify-content: flex-end;
         flex-direction: row-reverse;
         gap: 2rem;
         font-size: 1.6rem;
-        padding: 0 2.7rem 3.2rem 3.8rem;
+        padding: 0 0 3.2rem 3.8rem;
       }
 
       .card-related__img {
@@ -99,13 +110,16 @@ defineProps(["type", "name", "img", "metro", "walk", "price"]);
         border: 8px solid #ffffff;
         filter: drop-shadow(0px 6px 32px rgba(123, 129, 148, 0.4));
         border-radius: 15px;
+        & img {
+          max-height: 25.9rem;
+        }
       }
       .card-related__name {
         margin: 0;
       }
       .card-related__btn {
         display: block;
-				visibility: visible;
+        visibility: visible;
         position: absolute;
         bottom: 1.7rem;
         right: 1.7rem;
@@ -131,18 +145,21 @@ defineProps(["type", "name", "img", "metro", "walk", "price"]);
 
   &__img {
     position: relative;
-    margin-bottom: 2rem;
+    margin-bottom: 1.8rem;
     width: 120%;
     margin-left: -10%;
     & img {
       width: 100%;
+      max-height: 12.9rem;
+      height: 100%;
+      object-fit: cover;
       filter: drop-shadow(1px 7px 22px rgba(166, 175, 205, 0.58));
       border-radius: 6px;
     }
   }
 
   &__like {
-    width: 3rem;
+    width: 2.2rem;
   }
 
   &__play {
@@ -157,12 +174,22 @@ defineProps(["type", "name", "img", "metro", "walk", "price"]);
     height: 3rem;
     border-radius: 50%;
     cursor: pointer;
-    & img {
-      width: 1.5rem;
+    &::before {
+      content: "";
+      width: 1rem;
+      height: 1rem;
+      position: absolute;
+      left: 36%;
+      top: 32%;
+      background-image: url(@/assets/img/product-card/play.svg);
+      background-size: cover;
+      background-repeat: no-repeat;
+      transition: all 0.2s;
     }
   }
 
-  &__info {
+  &__hover {
+    display: none;
   }
 
   &__what {
@@ -171,14 +198,19 @@ defineProps(["type", "name", "img", "metro", "walk", "price"]);
   }
 
   &__name {
-    margin-bottom: 3.5rem;
+    flex: 1 auto;
+    margin-bottom: 1.4rem;
     color: $mainFontColor;
   }
-
+  &__bottom {
+    display: flex;
+    flex-direction: column;
+    margin-top: auto;
+  }
   &__metro {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    gap: 1.3rem;
     margin-bottom: 1.5rem;
     color: $mainFontColor;
   }

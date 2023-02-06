@@ -136,7 +136,6 @@
 
 		&__row {
 			display: flex;
-			gap: 2rem;
 		}
 	}
 
