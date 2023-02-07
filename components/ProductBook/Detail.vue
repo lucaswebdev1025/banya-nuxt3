@@ -52,7 +52,7 @@
 			</div>
 			<div class="card-detail__column">
 				<div class="card-detail__item">
-					<div class="card-detail__num">
+					<div class="card-detail__num h4">
 						<div class="card-detail__num-item">1.</div>
 						<div class="card-detail__num-text">Дата брони</div>
 					</div>
@@ -80,12 +80,74 @@
 			<div class="card-detail__column">
 				<div class="card-detail__item">
 					<div class="card-detail__num">
-						<div class="card-detail__num-item">1.</div>
-						<div class="card-detail__num-text">Дата брони</div>
+						<div class="card-detail__num-text h4">Детали бронирования:</div>
 					</div>
+				</div>
+				<div class="card-detail__item-info">
+					<div class="card-detail__info">
+						<div class="card-detail__info-item">Дата:</div>
+						<div class="card-detail__info-text">12.11.2023</div>
+					</div>
+					<div class="card-detail__info">
+						<div class="card-detail__info-item">Время:</div>
+						<div class="card-detail__info-text">15:00 - 18:30</div>
+					</div>
+					<div class="card-detail__info">
+						<div class="card-detail__info-item">Объект:</div>
+						<div class="card-detail__info-text">Сауна Цветы</div>
+					</div>
+					<div class="card-detail__info">
+						<div class="card-detail__info-item">Зал:</div>
+						<div class="card-detail__info-text">Зал Мак</div>
+					</div>
+					<div class="card-detail__info">
+						<div class="card-detail__info-item">Включено человек:</div>
+						<div class="card-detail__info-add">(7 Максимум)</div>
+						<div class="card-detail__info-text">4</div>
+					</div>
+					<div class="card-detail__info">
+						<div class="card-detail__info-item">Стоимость аренды:</div>
+						<div class="card-detail__info-another">3ч. 30 мин.</div>
+						<div class="card-detail__info-text">32 000 ₽</div>
+					</div>
+					<div class="card-detail__info">
+						<div class="card-detail__info-item">Доп. чел.:</div>
+						<div class="card-detail__info-another">0 чел.</div>
+						<div class="card-detail__info-text">0 ₽</div>
+					</div>
+					<div class="card-detail__info">
+						<div class="card-detail__info-item">Ответственный:</div>
+						<div class="card-detail__info-text">Владимир</div>
+					</div>
+				</div>
+				<div class="card-detail__price h2">
+					<div class="card-detail__price-text">Итого:</div>
+					<div class="card-detail__price-item">32 000 ₽</div>
+				</div>
+				<div class="card-detail__cancel">
+					<div class="card-detail__cancel-text h4">Отмена бронирования:</div>
+					<div class="card-detail__cancel-info">
+						ОТ 12 часов - моментальный возврат средств
+					</div>
+					<div class="card-detail__cancel-info">
+						ДО 12 часов - возврат средств не производится!
+					</div>
+				</div>
+				<div class="card-detail__book">
+					<div class="card-detail__checkbox">
+						<input type="checkbox" id="book" />
+						<label for="book"
+							>Данные брони мной проверены. С условиями бронирования и публичной
+							офертой согласен(-на)</label
+						>
+					</div>
+					<button class="card-detail__btn btn btn-purple h2-lite">
+						Забронировать
+					</button>
 				</div>
 			</div>
 		</div>
+		<UISteps />
 	</div>
 </template>
 
@@ -158,9 +220,11 @@
 		}
 
 		&__num-item {
+			color: $mainFontColor;
 		}
 
 		&__num-text {
+			color: $mainFontColor;
 		}
 
 		&__date {
@@ -201,6 +265,108 @@
 			cursor: pointer;
 			background: #ffffff;
 			box-shadow: 0px 4px 22px rgba(143, 153, 186, 0.27);
+		}
+
+		&__item-info {
+			display: flex;
+			flex-direction: column;
+			gap: 2rem;
+			padding-bottom: 3.5rem;
+			border-bottom: 1px solid #e1e5f2;
+		}
+		&__info {
+			display: flex;
+			justify-content: space-between;
+			font-weight: 600;
+			font-size: 1.4rem;
+			color: $mainFontColor;
+			position: relative;
+
+			&:last-child::before {
+				content: none;
+			}
+
+			&::before {
+				content: '';
+				position: absolute;
+				width: 85%;
+				height: 1px;
+				background-color: rgba(225, 229, 242, 0.5);
+				bottom: -1rem;
+				left: 3rem;
+			}
+		}
+
+		&__info-item {
+			color: $secondary-color;
+		}
+		&__info-text {
+		}
+
+		&__info-add {
+			counter-reset: $secondary-color;
+		}
+
+		&__price {
+			display: flex;
+			padding-top: 3.5rem;
+			padding-bottom: 3.5rem;
+			text-transform: uppercase;
+			border-bottom: 1px solid #e1e5f2;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			color: $mainFontColor;
+		}
+
+		&__cancel {
+			padding-top: 3.5rem;
+			padding-bottom: 3.5rem;
+			border-bottom: 1px solid #e1e5f2;
+			color: $mainFontColor;
+		}
+
+		&__cancel-text {
+			margin-bottom: 1.7rem;
+			font-size: 1.6rem;
+			font-weight: 700;
+			color: $mainFontColor;
+		}
+
+		&__cancel-info {
+			margin-bottom: 1.2rem;
+			font-weight: 600;
+			font-size: 1.4rem;
+
+			&:last-child {
+				margin: 0;
+			}
+		}
+
+		&__book {
+			padding-top: 2.6rem;
+		}
+
+		&__checkbox {
+			display: flex;
+			align-items: center;
+			gap: 3rem;
+			margin-bottom: 3rem;
+
+			& input {
+				min-width: 2.5rem;
+				min-height: 2.5rem;
+			}
+
+			& label {
+				font-weight: 500;
+				font-size: 1.4rem;
+				color: $mainFontColor;
+			}
+		}
+
+		&__btn {
+			width: 100%;
 		}
 	}
 
