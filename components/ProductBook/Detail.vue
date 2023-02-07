@@ -1,5 +1,6 @@
 <script setup>
 	import Datepicker from '@vuepic/vue-datepicker';
+	const currentDate = ref(new Date().getDate());
 	const date = ref(new Date());
 	const dateValue = ref();
 
@@ -14,7 +15,18 @@
 		date.value = new Date(date.value.setDate(date.value.getDate() + 1));
 	};
 	const minusDay = () => {
+		if (date.value.getDate() - 1 < currentDate.value) {
+			console.log(1);
+			return;
+		}
 		date.value = new Date(date.value.setDate(date.value.getDate() - 1));
+	};
+
+	const handleDate = modelData => {
+		if (modelData.getDate() < currentDate.value) {
+			return;
+		}
+		date.value = modelData;
 	};
 </script>
 
@@ -51,7 +63,8 @@
 							<IconArrow @click="plusDay" class="card-detail__arrow" />
 						</div>
 						<Datepicker
-							v-model="date"
+							@update:modelValue="handleDate"
+							:value="date"
 							:range="false"
 							:enable-time-picker="false"
 						>
@@ -258,5 +271,9 @@
 	.dp__cancel,
 	.dp__selection_preview {
 		display: none;
+	}
+
+	.dp__cell_offset {
+		color: #8f99ba;
 	}
 </style>
