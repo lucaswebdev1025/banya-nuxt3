@@ -190,4 +190,73 @@
 			box-shadow: 0px 4px 22px rgba(143, 153, 186, 0.27);
 		}
 	}
+
+	// calendar
+	.dp__month_year_row {
+		display: inline-flex;
+		gap: 2rem;
+		position: relative;
+		left: 50%;
+		transform: translateX(-50%);
+	}
+	.dp__month_year_wrap {
+		gap: 2rem;
+
+		font-weight: 700;
+		font-size: 1.6rem;
+		color: #3e3e51;
+	}
+
+	.dp__month_year_select {
+		pointer-events: none;
+		cursor: auto;
+	}
+
+	.dp__calendar_header_item {
+		font-weight: 500;
+		font-size: 1.4rem;
+		color: #8f99ba;
+
+		&:nth-child(6) {
+			color: $red-color;
+		}
+		&:nth-child(7) {
+			color: $red-color;
+		}
+	}
+
+	.dp__cell_inner {
+		font-weight: 500;
+		font-size: 1.4rem;
+		color: #3e3e51;
+	}
+
+	.dp__today {
+		border-color: #17a300;
+		border-radius: 24px;
+	}
+
+	.dp__range_end,
+	.dp__range_start,
+	.dp__active_date {
+		color: white;
+		background: #17a300;
+		border-radius: 24px;
+		border: none;
+	}
+	.dp__action_row {
+		padding-top: 0;
+		padding-bottom: 10px;
+	}
+
+	.dp__action_buttons {
+		width: 100%;
+		font-size: 1.4rem;
+		color: $green-color;
+	}
+
+	.dp__cancel,
+	.dp__selection_preview {
+		display: none;
+	}
 </style>
