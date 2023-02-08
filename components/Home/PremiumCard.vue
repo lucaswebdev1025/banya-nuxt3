@@ -40,6 +40,12 @@ defineProps(["type", "name", "img", "metro", "walk", "price"]);
   background-color: $default-color;
   border-radius: 2.3rem;
   align-items: stretch;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  &:hover {
+    box-shadow: 0px 6px 56px rgba(123, 129, 148, 0.48);
+    transition: all 0.2s ease;
+  }
   &__info {
     padding: 0.8rem 0 1.6rem 2.4rem;
   }
@@ -88,6 +94,25 @@ defineProps(["type", "name", "img", "metro", "walk", "price"]);
     color: #9da7c7;
     font-size: 1rem;
     font-family: "Montserrat";
+    position: relative;
+    &::after {
+      content: "";
+      position: absolute;
+      width: 0.1rem;
+      height: 70%;
+      top: .4rem;
+      right: -0.95rem;
+      background: #e1e5f2;
+    }
+    &::before {
+      content: "";
+      position: absolute;
+      width: 0.1rem;
+      height: 70%;
+      top: .4rem;
+      left: -0.95rem;
+      background: #e1e5f2;
+    }
   }
   &__bottom {
     display: flex;
