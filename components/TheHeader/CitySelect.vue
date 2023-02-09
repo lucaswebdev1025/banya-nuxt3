@@ -135,7 +135,7 @@ const data = [
     ></span>
   </div>
   <div v-if="isActive" @click="isActive = !isActive" class="city-dropdown__overlay"></div>
-  <div v-if="isActive" class="city-dropdown">
+  <div :class="[isActive ? 'active' : '']" class="city-dropdown">
     <div class="city-dropdown__title">Выбор города</div>
     <span class="city-dropdown__info"
       >10 578 пунктов выдачи в 1 154 городах</span
@@ -211,6 +211,16 @@ const data = [
   background: $default-color;
   box-shadow: 0px 7px 27px rgba(136, 152, 206, 0.35);
   border-radius: 1.2rem;
+  opacity: 0;
+  transform: translateY(-2rem);
+  transition: all .2s ease;
+  visibility: hidden;
+  &.active{
+    opacity: 1;
+    transform: translateY(0);
+    transition: all .5s ease;
+    visibility: visible;
+  }
   &__title {
     font-size: 2rem;
     line-height: 2rem;
