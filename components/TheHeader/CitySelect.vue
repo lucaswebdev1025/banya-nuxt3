@@ -161,6 +161,7 @@ const data = [
       >
         {{ city.city }}
       </p>
+      <p v-if="!filteredData.length">Город не найден</p>
     </div>
   </div>
 </template>
