@@ -5,5 +5,8 @@
     <HomeDiscount/>
     <HomePopular/>
     <HomeMap/>
+    <HomeLinks/>
+    <HomePremium/>
+    <HomeInfo/>
   </div>
 </template>
