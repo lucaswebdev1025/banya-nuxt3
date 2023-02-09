@@ -1,6 +1,13 @@
 <script lang="ts" setup>
 let isActive = ref(false);
 let selectCity = ref("Москва");
+let search = ref('');
+
+const filteredData = computed(() => {
+  return data.filter(({ city }) =>
+    [city].some((val) => val.toLowerCase().includes(search.value))
+  );
+});
 const data = [
   {
     city: "Москва",
@@ -134,19 +141,23 @@ const data = [
       class="city-select__icon"
     ></span>
   </div>
-  <div v-if="isActive" @click="isActive = !isActive" class="city-dropdown__overlay"></div>
+  <div
+    v-if="isActive"
+    @click="isActive = !isActive"
+    class="city-dropdown__overlay"
+  ></div>
   <div :class="[isActive ? 'active' : '']" class="city-dropdown">
     <div class="city-dropdown__title">Выбор города</div>
     <span class="city-dropdown__info"
       >10 578 пунктов выдачи в 1 154 городах</span
     >
-    <input placeholder="Поиск" type="text" />
+    <input placeholder="Поиск" type="search" v-model="search" />
     <div class="city-dropdown__inner">
       <p
         class="city-dropdown__item"
         @click="selectCity = city.city"
         :class="[selectCity === city.city ? 'active' : '']"
-        v-for="city in data"
+        v-for="city in filteredData"
       >
         {{ city.city }}
       </p>
@@ -200,6 +211,8 @@ const data = [
   }
 }
 .city-dropdown {
+  max-width: 68rem;
+  width: 100%;
   position: absolute;
   padding: 3.3rem 4rem 4.2rem 3.7rem;
   display: flex;
@@ -213,12 +226,12 @@ const data = [
   border-radius: 1.2rem;
   opacity: 0;
   transform: translateY(-2rem);
-  transition: all .2s ease;
+  transition: all 0.2s ease;
   visibility: hidden;
-  &.active{
+  &.active {
     opacity: 1;
     transform: translateY(0);
-    transition: all .5s ease;
+    transition: all 0.5s ease;
     visibility: visible;
   }
   &__title {
@@ -259,12 +272,12 @@ const data = [
   }
   &__item {
     cursor: pointer;
-    &:hover{
-      color:$green-color;
+    &:hover {
+      color: $green-color;
       transition: all 0.2s ease;
     }
-    &.active{
-      color:$green-color
+    &.active {
+      color: $green-color;
     }
   }
 }
