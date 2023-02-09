@@ -64,7 +64,7 @@ const product = ref([
             фильтра.
           </div>
         </div>
-        <div class="premium__card">
+        <nuxt-link to="/product/vip" class="premium__card">
           <HomePremiumCard
             :img="item.img"
             :metro="item.metro"
@@ -73,7 +73,7 @@ const product = ref([
             :walk="item.walk"
             :price="item.price"
           />
-        </div>
+        </nuxt-link>
       </div>
     </div>
   </section>
