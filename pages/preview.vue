@@ -1,9 +1,27 @@
 <script setup>
 	// Import Swiper Vue.js components
 	import { Swiper, SwiperSlide } from 'swiper/vue';
+	import { EffectFade } from 'swiper';
 
 	// Import Swiper styles
 	import 'swiper/css';
+
+	import bigIm1 from '~/assets/img/promotions/1.jpg';
+	import bigIm2 from '~/assets/img/promotions/2.jpg';
+	import bigIm3 from '~/assets/img/promotions/3.jpg';
+
+	const img = ref([
+		bigIm1,
+		bigIm2,
+		bigIm3,
+		bigIm1,
+		bigIm2,
+		bigIm3,
+		bigIm1,
+		bigIm2,
+		bigIm3,
+		bigIm1,
+	]);
 
 	definePageMeta({
 		layout: 'slider',
@@ -24,6 +42,8 @@
 	function slideTo(idx) {
 		swiperBtn.value.slideTo(idx);
 	}
+
+	const modules = [EffectFade];
 </script>
 
 <template>
@@ -58,12 +78,17 @@
 					</div>
 				</div>
 				<div class="preview-page__content">
-					<swiper @swiper="getRef" class="preview-swiper product-swiper">
-						<swiper-slide v-for="item in 10">
+					<swiper
+						@swiper="getRef"
+						:modules="modules"
+						:effect="'fade'"
+						class="preview-swiper product-swiper"
+					>
+						<swiper-slide v-for="item in img">
 							<div class="preview-card-swiper__main product-card-swiper__main">
 								<img
 									class="preview-card-swiper__bg product-card-swiper__bg"
-									src="~/assets/img/preview/preview-bg.jpg"
+									:src="item"
 									alt=""
 								/>
 
@@ -138,7 +163,7 @@
 					height: 0.6rem;
 					width: 9rem;
 					background-color: $green-color;
-					left: 50%;;
+					left: 50%;
 					border-radius: 0px 2px 2px 0px;
 					bottom: -4rem;
 					transform: translateX(-50%);

@@ -1,13 +1,10 @@
 <script setup>
 	// Import Swiper Vue.js components
 	import { Swiper, SwiperSlide } from 'swiper/vue';
-
+	import { EffectFade } from 'swiper';
 
 	// Import Swiper styles
 	import 'swiper/css';
-
-	// import required modules
-	import { Pagination, Navigation, Thumbs } from 'swiper';
 
 	import img1 from '~/assets/img/product-card/1.png';
 	import img2 from '~/assets/img/product-card/2.png';
@@ -17,6 +14,10 @@
 	import img6 from '~/assets/img/product-card/6.png';
 	import img7 from '~/assets/img/product-card/6.png';
 
+	import bigIm1 from '~/assets/img/promotions/1.jpg';
+	import bigIm2 from '~/assets/img/promotions/2.jpg';
+	import bigIm3 from '~/assets/img/promotions/3.jpg';
+
 	defineProps({
 		premium: {
 			type: Boolean,
@@ -24,12 +25,20 @@
 		},
 	});
 
+	const mainImages = ref([
+		bigIm1,
+		bigIm2,
+		bigIm3,
+		bigIm2,
+		bigIm1,
+		bigIm3,
+		bigIm1,
+	]);
 	const images = ref([img1, img2, img3, img4, img5, img6, img7]);
 
 	// swiper
 
 	const swiperBtn = ref(null);
-	const thumbsSwiper = ref(null);
 
 	const totalImg = computed(() => images.value.length);
 	const currentImg = computed(() => swiperBtn.value?.realIndex + 1);
@@ -44,24 +53,25 @@
 	function prev() {
 		swiperBtn.value.slidePrev();
 	}
-	function setThumbsSwiper(swiper) {
-		thumbsSwiper.value = swiper;
-	}
+
 	function slideTo(idx) {
 		swiperBtn.value.slideTo(idx);
 	}
+
+	const modules = [EffectFade];
 </script>
 
 <template>
 	<div class="product-card-swiper">
-		<swiper @swiper="getRef" class="product-swiper">
+		<swiper
+			@swiper="getRef"
+			:modules="modules"
+			:effect="'fade'"
+			class="product-swiper"
+		>
 			<swiper-slide v-for="(item, idx) in 7">
 				<div class="product-card-swiper__main">
-					<img
-						class="product-card-swiper__bg"
-						src="~/assets/img/product-card/card-swiper.jpg"
-						alt=""
-					/>
+					<img class="product-card-swiper__bg" :src="mainImages[idx]" alt="" />
 
 					<img
 						src="~/assets/img/product-card/logo.png"
@@ -77,14 +87,14 @@
 				v-if="premium"
 				@click="prev"
 			>
-				<IconArrow class="fill" />
+				<IconArrow :class="{ fill: currentImg != 1 }" />
 			</div>
 			<div
 				class="product-card-swiper__arrow arrow-right pos"
 				@click="next"
 				v-if="premium"
 			>
-				<IconArrow />
+				<IconArrow :class="{ fill: currentImg != totalImg }" />
 			</div>
 			<UISliderButton
 				:current="currentImg"
@@ -94,28 +104,18 @@
 			/>
 		</swiper>
 
-		<swiper
-			@swiper="setThumbsSwiper"
-			:spaceBetween="5"
-			:watchSlidesProgress="true"
-			class="product-card-swiper-small"
-		>
-			<swiper-slide v-for="(item, idx) in 7" v-if="premium">
-				<div class="product-card-swiper__thumbnail">
-					<img
-						@click="slideTo(idx)"
-						:src="images[idx]"
-						alt=""
-						:class="{
-							active: idx === swiperBtn?.realIndex,
-						}"
-					/>
-				</div>
-			</swiper-slide>
-		</swiper>
+		<div class="product-card-swiper__thumbnail" v-if="premium">
+			<img
+				v-for="(item, idx) in 7"
+				@click="slideTo(idx)"
+				:src="images[idx]"
+				alt=""
+				:class="{
+					active: idx === swiperBtn?.realIndex,
+				}"
+			/>
+		</div>
 	</div>
 </template>
 
-<style lang="scss">
-
-</style>
+<style lang="scss"></style>
