@@ -1,16 +1,10 @@
 <script setup>
 	// Import Swiper Vue.js components
 	import { Swiper, SwiperSlide } from 'swiper/vue';
-	// import { useSwiper } from 'swiper/vue';
-	// const sr = useSwiper();
-	// sr.value.slideTo()
+
 
 	// Import Swiper styles
 	import 'swiper/css';
-
-	import 'swiper/css/thumbs';
-	import 'swiper/css/pagination';
-	import 'swiper/css/navigation';
 
 	// import required modules
 	import { Pagination, Navigation, Thumbs } from 'swiper';
@@ -36,6 +30,10 @@
 
 	const swiperBtn = ref(null);
 	const thumbsSwiper = ref(null);
+
+	const totalImg = computed(() => images.value.length);
+	const currentImg = computed(() => swiperBtn.value?.realIndex + 1);
+
 	function getRef(swiperInstance) {
 		swiperBtn.value = swiperInstance;
 	}
@@ -52,13 +50,12 @@
 	function slideTo(idx) {
 		swiperBtn.value.slideTo(idx);
 	}
-	const modules = [Pagination, Navigation, Thumbs];
 </script>
 
 <template>
 	<div class="product-card-swiper">
-		<swiper @swiper="getRef" :modules="modules" class="product-swiper">
-			<swiper-slide v-for="item in 7">
+		<swiper @swiper="getRef" class="product-swiper">
+			<swiper-slide v-for="(item, idx) in 7">
 				<div class="product-card-swiper__main">
 					<img
 						class="product-card-swiper__bg"
@@ -90,8 +87,8 @@
 				<IconArrow />
 			</div>
 			<UISliderButton
-				:current="swiperBtn?.realIndex + 1"
-				:max="swiperBtn?.snapGrid?.length"
+				:current="currentImg"
+				:max="totalImg"
 				class="product-card-swiper__count pos"
 				v-if="premium"
 			/>
@@ -101,7 +98,6 @@
 			@swiper="setThumbsSwiper"
 			:spaceBetween="5"
 			:watchSlidesProgress="true"
-			:modules="modules"
 			class="product-card-swiper-small"
 		>
 			<swiper-slide v-for="(item, idx) in 7" v-if="premium">
@@ -121,110 +117,5 @@
 </template>
 
 <style lang="scss">
-	.product-swiper {
-		max-width: 81rem;
-	}
-	.product-card-swiper-small {
-		overflow: visible;
-		& .swiper-slide {
-			max-width: 11rem;
-		}
-	}
 
-	.pos {
-		position: absolute;
-		z-index: 1;
-		top: 0;
-		left: 0;
-	}
-	.product-card-swiper {
-		&__main {
-			position: relative;
-		}
-
-		&__bg {
-			border-radius: 2.8rem;
-			width: 100%;
-			height: 100%;
-			object-fit: cover;
-			max-height: 45rem;
-		}
-
-		&__logo {
-			top: 2rem;
-			right: 2rem;
-			left: auto;
-		}
-
-		&__play {
-			background: rgba($color: #000000, $alpha: 0.4);
-
-			border-radius: 50%;
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			top: 50%;
-			left: 50%;
-			transform: translate(-50%, -50%);
-			padding: 2rem;
-			cursor: pointer;
-		}
-
-		&__arrow {
-			background: $default-color;
-			box-shadow: 1px 4px 12px #a6afcd;
-			border-radius: 50%;
-			padding: 1rem;
-			display: flex;
-			justify-content: center;
-			align-items: center;
-
-			top: 50%;
-			left: 2rem;
-			cursor: pointer;
-			transform: translateY(-50%);
-			& svg {
-				width: 3.5rem;
-				height: 3rem;
-			}
-		}
-
-		&__count {
-			top: auto;
-			bottom: 1.5rem;
-			left: 50%;
-			transform: translateX(-50%);
-		}
-
-		&__thumbnail {
-			max-width: 11rem;
-			display: flex;
-			align-items: center;
-			justify-content: space-between;
-			margin-top: 1.6rem;
-			gap: 1.6rem;
-
-			& img {
-				width: 100%;
-				border: 2px solid transparent;
-				transition: all 0.2s linear;
-				border-radius: 12px;
-				cursor: pointer;
-
-				&.active {
-					border: 2px solid #17a300;
-					filter: drop-shadow(0px 7px 23px rgba(118, 130, 168, 0.55));
-					border-radius: 12px;
-					transform: scale(1.1);
-				}
-			}
-		}
-	}
-	.arrow-left {
-		transform: translateY(-50%) rotate(180deg);
-	}
-	.arrow-right {
-		left: auto;
-		right: 2rem;
-	}
 </style>
