@@ -136,6 +136,10 @@
 
 		&__row {
 			display: flex;
+
+			@media screen and (max-width: 1000px) {
+				flex-wrap: wrap;
+			}
 		}
 	}
 

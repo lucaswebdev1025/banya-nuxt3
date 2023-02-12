@@ -1,7 +1,11 @@
-<script setup></script>
+<script setup>
+	import { useMediaQuery } from '@vueuse/core';
+	const isMobileeScreen = useMediaQuery('(max-width: 768px)');
+	const mobile = computed(() => ref(isMobileeScreen.value));
+</script>
 
 <template>
-	<div class="card">
+	<div class="card" v-if="!mobile.value">
 		<ProductCardTop badje="vip" badjeText="VIP" />
 		<div class="card__content">
 			<div class="card__left">

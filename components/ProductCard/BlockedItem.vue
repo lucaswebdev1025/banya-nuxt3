@@ -1,11 +1,33 @@
 <script setup>
+	import { useMediaQuery } from '@vueuse/core';
 	defineProps(['title', 'index']);
+
+	const isMobileeScreen = useMediaQuery('(max-width: 768px)');
+	const mobile = computed(() => ref(isMobileeScreen.value));
 </script>
 
 <template>
 	<div
+		v-if="mobile.value"
 		class="product-card-blocked__item"
 		:class="'product-card-blocked__item-' + index"
+	>
+		<div class="product-card-blocker__info">
+			<div class="product-card-blocked__title h2">{{ title }}</div>
+			<div class="product-card-blocked__text h4">
+				Контент доступен пользователям с премиум аккаунтом
+			</div>
+		</div>
+		<div class="product-card-blocked__right">
+			<div class="product-card-blocked__lock">
+				<img src="~/assets/img/product-card/lock.svg" alt="" />
+			</div>
+		</div>
+	</div>
+	<div
+		class="product-card-blocked__item"
+		:class="'product-card-blocked__item-' + index"
+		v-else
 	>
 		<div class="product-card-blocked__title h2">{{ title }}</div>
 		<div class="product-card-blocked__right">
@@ -27,7 +49,6 @@
 			z-index: 10;
 			align-items: center;
 			justify-content: space-between;
-
 
 			&-2 {
 				z-index: 9;

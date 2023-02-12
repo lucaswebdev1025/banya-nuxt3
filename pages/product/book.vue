@@ -1,9 +1,14 @@
 <script setup>
+	import { useMediaQuery } from '@vueuse/core';
+
 	import productItemData from '~~/composables/productItemData';
+
+	const isMobileeScreen = useMediaQuery('(max-width: 768px)');
+	const mobile = computed(() => ref(isMobileeScreen.value));
 </script>
 
 <template>
-	<div class="card">
+	<div class="card" v-if="!mobile.value">
 		<ProductCardTop badje="book" badjeText="Бронь" />
 		<div class="card__content">
 			<div class="card__left">
@@ -80,6 +85,4 @@
 			width: 100%;
 		}
 	}
-
-	
 </style>

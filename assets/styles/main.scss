@@ -89,6 +89,10 @@ li {
 	width: 100%;
 	max-width: $lgDesktopWidth;
 
+	@media screen and (max-width: 1000px) {
+		padding: 0 1.5rem;
+	}
+
 	// @media screen and (max-width: $lgDesktopWidth) {
 	// 	padding: 0 1.6rem;
 	// }

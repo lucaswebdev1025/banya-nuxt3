@@ -1,4 +1,9 @@
 <script setup>
+	import { useMediaQuery } from '@vueuse/core';
+
+	const isLargeScreen = useMediaQuery('(min-width: 1000px)');
+	const mobile = computed(() => ref(isLargeScreen));
+
 	const breadcrumbs = ref([
 		'Главная',
 		'Бани в городе Москва',
@@ -8,9 +13,9 @@
 
 <template>
 	<div class="product-card">
-		<div class="container">
+		<div class="product-container container">
 			<!-- header -->
-			<div class="sub-header">
+			<div class="sub-header" v-if="mobile.value">
 				<UIBreadcrumbs :items="breadcrumbs" />
 				<UserAction />
 			</div>
@@ -39,5 +44,11 @@
 		display: flex;
 		justify-content: space-between;
 		margin: 1.6rem 0;
+	}
+
+	.product-container {
+		@media screen and (max-width: 1000px) {
+			width: auto;
+		}
 	}
 </style>
