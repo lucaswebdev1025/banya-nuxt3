@@ -1,9 +1,14 @@
 <script setup>
-	defineProps(['max', 'current']);
+	defineProps(['max', 'current', 'mobile']);
 </script>
 
 <template>
-	<div class="slider-btn">
+	<div
+		class="slider-btn"
+		:class="{
+			mobile: mobile,
+		}"
+	>
 		<div class="slider-btn__content">
 			<span class="slider-btn__active h2">{{ current }}</span> |
 			<span class="slider-btn__total h5">{{ max }}</span>
@@ -30,6 +35,14 @@
 		}
 		&__total {
 			color: #9da7c7;
+		}
+	}
+
+	.mobile {
+		margin-top: 6rem;
+		justify-content: flex-end;
+		& .slider-btn__active {
+			color: $default-color;
 		}
 	}
 </style>
