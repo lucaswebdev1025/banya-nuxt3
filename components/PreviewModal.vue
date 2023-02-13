@@ -10,6 +10,17 @@
 	import bigIm2 from '~/assets/img/promotions/2.jpg';
 	import bigIm3 from '~/assets/img/promotions/3.jpg';
 
+	defineProps({
+		visible: {
+			type: Boolean,
+			default: false,
+		},
+	});
+	definePageMeta({
+		layout: 'slider',
+	});
+	const emit = defineEmits('closeModal');
+
 	const img = ref([
 		bigIm1,
 		bigIm2,
@@ -22,10 +33,6 @@
 		bigIm3,
 		bigIm1,
 	]);
-
-	definePageMeta({
-		layout: 'slider',
-	});
 
 	const swiperBtn = ref(null);
 	const currentImg = computed(() => swiperBtn.value?.realIndex + 1);
@@ -44,10 +51,33 @@
 	}
 
 	const modules = [EffectFade];
+
+	const itemLink = ref([
+		{
+			text: 'Видео',
+			active: true,
+		},
+		{
+			text: '3D-тур',
+			active: false,
+		},
+	]);
+
+	const activeLink = item => {
+		if (item.active === true) {
+			return;
+		}
+		itemLink.value.forEach(i => (i.active = false));
+		item.active = true;
+	};
+
+	const closeModal = () => {
+		emit('closeModal');
+	};
 </script>
 
 <template>
-	<div class="preview-page">
+	<div class="preview-page" v-if="visible">
 		<div class="container">
 			<div class="preview-page__inner">
 				<div class="preview-page__top">
@@ -57,8 +87,17 @@
 					</div>
 					<div class="preview-page__right">
 						<ul class="nav">
-							<li class="nav__item h3 active">Видео</li>
-							<li class="nav__item h3">3D-тур</li>
+							<li
+								class="nav__item h3"
+								:class="{
+									active: item.active,
+								}"
+								v-for="item in itemLink"
+								:key="item.text"
+								@click="activeLink(item)"
+							>
+								{{ item.text }}
+							</li>
 						</ul>
 						<div class="preview-page__action">
 							<img
@@ -71,6 +110,7 @@
 							</button>
 						</div>
 						<img
+							@click="closeModal"
 							class="preview-page__close"
 							src="~/assets/img/icon/close.svg"
 							alt=""
@@ -172,8 +212,15 @@
 		}
 	}
 	.preview-page {
-		padding: 5.6rem 0;
+		padding: 2.6rem 0;
 		width: 100%;
+		position: fixed;
+		top: 0;
+		left: 0;
+		height: 100%;
+		z-index: 100;
+		background-color: $default-color;
+		overflow-y: scroll;
 		&__inner {
 		}
 
@@ -240,22 +287,22 @@
 
 	.preview-swiper {
 		max-width: 100%;
-		margin-bottom: 4rem;
+		margin-bottom: 2rem;
 	}
 	.preview-card-swiper {
 		&__main {
 		}
 
 		&__bg {
-			max-height: 100%;
+			max-height: 75rem;
 		}
 
 		&__logo {
 		}
 
 		&__play {
-			width: 10rem;
-			height: 10rem;
+			width: 8rem;
+			height: 8rem;
 
 			& img {
 				width: 50px;
@@ -271,6 +318,7 @@
 		&__thumbnail {
 			display: flex;
 			gap: 2.5rem;
+			margin-bottom: 5rem;
 
 			& img {
 				cursor: pointer;
