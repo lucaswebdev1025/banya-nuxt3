@@ -31,7 +31,6 @@
 
 <style lang="scss" scoped>
 .location {
-  margin-top: 7.2rem;
   display: flex;
   gap: 5.3rem;
   align-items: center;
