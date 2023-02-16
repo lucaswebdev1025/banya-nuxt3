@@ -87,7 +87,6 @@
     grid-template-columns: 3fr 1fr 3fr 1fr 3fr;
     gap: 5rem;
     padding-bottom: 5.9rem;
-    border-bottom: 1px solid rgba(143, 153, 186, 0.2);
   }
   &__item {
     display: flex;
