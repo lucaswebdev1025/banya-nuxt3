@@ -13,7 +13,6 @@
 			mobile: mobile,
 		}"
 	>
-		{{}}
 		<div class="slider-btn__content">
 			<span class="slider-btn__active h2">{{ current }}</span> |
 			<span class="slider-btn__total h5">{{ max }}</span>
