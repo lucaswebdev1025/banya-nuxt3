@@ -36,7 +36,6 @@
 
 <style lang="scss" scoped>
 .zal-name {
-  margin-top: 7.2rem;
   padding-bottom: 5.9rem;
   border-bottom: 1px solid rgba(143, 153, 186, 0.2);
   &__title {
