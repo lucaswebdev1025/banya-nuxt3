@@ -7,10 +7,11 @@
           Примеры: Жаркий сруб | Королевский номер | Зал №3 | Общее отделение |
           Хаммам
         </div>
-        <input placeholder="Название зала" type="text" />
+        <input class="input" placeholder="Название зала" type="text" />
         <div class="zal-name__desc">
           <span>Описание</span>
           <textarea
+            class="input input_textarea"
             placeholder="Добавиьте описание"
             name=""
             id=""

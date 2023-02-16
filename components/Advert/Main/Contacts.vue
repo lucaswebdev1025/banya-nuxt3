@@ -7,37 +7,37 @@
         <div class="contacts__name">
           Номер телефона для объявления
         </div>
-        <input placeholder="+7" type="text">
+        <input class="input" placeholder="+7" type="text">
       </div>
       <div class="contacts__item">
         <div class="contacts__name">
           Номер владельца (cкрыт)
         </div>
-        <input placeholder="+7" type="text">
+        <input class="input" placeholder="+7" type="text">
       </div>
       <div class="contacts__item">
         <div class="contacts__name">
           Номер для оповещений WhatsApp (cкрыт)
         </div>
-        <input placeholder="+7" type="text">
+        <input class="input" placeholder="+7" type="text">
       </div>
       <div class="contacts__item">
         <div class="contacts__name">
           Электронная почта объекта (cкрыта)
         </div>
-        <input placeholder="Ссылка" type="text">
+        <input class="input" placeholder="Ссылка" type="text">
       </div>
       <div class="contacts__item">
         <div class="contacts__name">
           Номер администратора (cкрыт) 
         </div>
-        <input placeholder="+7" type="text">
+        <input class="input" placeholder="+7" type="text">
       </div>
       <div class="contacts__item">
         <div class="contacts__name">
           Эл. почта владельца (cкрыта)
         </div>
-        <input placeholder="Ссылка" type="text">
+        <input class="input" placeholder="Ссылка" type="text">
       </div>
     </div>
   </div>

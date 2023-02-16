@@ -7,13 +7,13 @@
         <div class="social__name">
           Официальный сайт
         </div>
-        <input placeholder="Сайт" type="text">
+        <input class="input" placeholder="Сайт" type="text">
       </div>
       <div class="social__item">
         <div class="social__name">
           Вк
         </div>
-        <input placeholder="Ссылка" type="text">
+        <input class="input" placeholder="Ссылка" type="text">
       </div>
     </div>
   </div>

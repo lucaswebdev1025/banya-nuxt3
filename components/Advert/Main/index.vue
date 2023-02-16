@@ -13,7 +13,7 @@
     <div class="advert-main__title advert-main__title_zal">Зал</div>
     <div class="advert-main__item">
       <span>Активность <img src="" alt="" /></span>
-      <input type="radio" />
+      <input class="switch" type="checkbox" />
     </div>
     <AdvertMainZalName/>
     <AdvertMainZalPrice/>
@@ -26,6 +26,7 @@
 </template>
 
 <style lang="scss" scoped>
+
 .advert-main {
   background: #ffffff;
   box-shadow: 0px 11px 48px rgba(123, 129, 148, 0.15);

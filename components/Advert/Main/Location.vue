@@ -6,9 +6,9 @@
         Введите адрес или поставьте точку на карте
       </div>
       <div class="location__input">
-        <input placeholder="Адрес" type="text" />
+        <input class="input" placeholder="Адрес" type="text" />
         <p>или</p>
-        <input placeholder="Координаты" type="text" />
+        <input class="input" placeholder="Координаты" type="text" />
       </div>
     </div>
     <div class="location__map">
