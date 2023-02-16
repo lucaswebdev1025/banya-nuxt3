@@ -6,6 +6,9 @@
   padding: 0.8rem 1.6rem;
   box-sizing: border-box;
   border: none;
+  &_textarea{
+    border-radius: 23px;
+  }
   :placeholder {
     font-weight: 500;
     font-size: 1.4rem;
