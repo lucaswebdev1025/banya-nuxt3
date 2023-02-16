@@ -58,6 +58,9 @@
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
+    & p{
+      padding-left: 1.5rem;
+    }
   }
 }
 </style>
