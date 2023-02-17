@@ -6,7 +6,6 @@
 			isLarge.value = false;
 		}
 	});
-
 	const breadcrumbs = ref([
 		'Главная',
 		'Бани в городе Москва',
