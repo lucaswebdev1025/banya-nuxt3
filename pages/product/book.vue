@@ -53,6 +53,7 @@
 		</div>
 	</div>
 	<MobileCard v-if="!isLarge" />
+
 	<ProductBookPrice class="card-under" />
 	<ProductBookSales class="card-under" />
 	<ProductBookDetail class="card-under" />

@@ -1,4 +1,5 @@
 <script setup>
+
 	const isLarge = ref(true);
 
 	onMounted(() => {
@@ -10,6 +11,7 @@
 
 <template>
 	<div class="card" v-if="isLarge">
+
 		<ProductCardTop />
 		<div class="card__content">
 			<div class="card__left">
@@ -34,6 +36,7 @@
 		</div>
 	</div>
 	<MobileCard v-if="!isLarge" :free="true" />
+
 	<ProductCardBlocked class="no-box" v-if="true" />
 	<ProductCardService class="no-box" />
 	<ProductCardReview class="no-box" />

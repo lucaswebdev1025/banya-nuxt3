@@ -16,6 +16,7 @@
 
 <template>
 	<div class="card" v-if="isLarge">
+
 		<ProductCardTop badje="vip" badjeText="VIP" />
 		<div class="card__content">
 			<div class="card__left">
@@ -70,6 +71,7 @@
 		</div>
 	</div>
 	<MobileCard v-if="!isLarge" />
+
 	<ProductBookPrice class="card-under" />
 	<ProductBookSales class="card-under" />
 	<ProductBookItems
