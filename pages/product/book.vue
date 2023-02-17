@@ -1,17 +1,16 @@
 <script setup>
 	import productItemData from '~~/composables/productItemData';
-	import { useMediaQuery } from '@vueuse/core';
+	const isLarge = ref(true);
 
-	const isLargeScreen = useMediaQuery('(min-width: 768px)');
-	const mobile = computed(() =>
-		reactive({
-			isLargeScreen,
-		})
-	);
+	onMounted(() => {
+		if (window.innerWidth <= 768) {
+			isLarge.value = false;
+		}
+	});
 </script>
 
 <template>
-	<div class="card" v-if="mobile.isLargeScreen">
+	<div class="card" v-if="isLarge">
 		<ProductCardTop badje="book" badjeText="Бронь" />
 		<div class="card__content">
 			<div class="card__left">
@@ -53,7 +52,7 @@
 			</div>
 		</div>
 	</div>
-	<MobileCard v-if="!mobile.isLargeScreen" />
+	<MobileCard v-if="!isLarge" />
 	<ProductBookPrice class="card-under" />
 	<ProductBookSales class="card-under" />
 	<ProductBookDetail class="card-under" />

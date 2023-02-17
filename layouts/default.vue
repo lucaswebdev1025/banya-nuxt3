@@ -1,22 +1,23 @@
 <script setup>
-	import { useMediaQuery } from '@vueuse/core';
+	const isLarge = ref(true);
 
-	const isLargeScreen = useMediaQuery('(min-width: 768px)');
-	const mobile = computed(() =>
-		reactive({
-			isLargeScreen,
-		})
-	);
+	onMounted(() => {
+		if (window.innerWidth <= 768) {
+			isLarge.value = false;
+		}
+	});
 </script>
 
 <template>
-	<div class="wrapper">
-		<TheHeader v-if="mobile.isLargeScreen" />
-		<div class="wrapper-content">
-			<slot />
+	<ClientOnly fallback-tag="span" fallback="Loading comments...">
+		<div class="wrapper">
+			<TheHeader v-if="isLarge" />
+			<div class="wrapper-content">
+				<slot />
+			</div>
+			<TheFooter v-if="isLarge" />
 		</div>
-		<TheFooter v-if="mobile.isLargeScreen" />
-	</div>
+	</ClientOnly>
 </template>
 
 <style scoped lang="scss">
