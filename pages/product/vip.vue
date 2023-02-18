@@ -69,7 +69,9 @@
 			</div>
 		</div>
 	</div>
-	<MobileCard v-if="!isLarge" />
+	<MobileProductCard v-if="!isLarge" />
+	<MobileProductAdress v-if="!isLarge" />
+	<MobileProductFavorite v-if="!isLarge" />
 	<ProductBookPrice class="card-under" />
 	<ProductBookSales class="card-under" />
 	<ProductBookItems

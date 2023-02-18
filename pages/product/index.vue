@@ -33,9 +33,11 @@
 			</div>
 		</div>
 	</div>
-	<MobileCard v-if="!isLarge" :free="true" />
+	<MobileProductCard v-if="!isLarge" :free="true" />
+	<MobileProductAdress v-if="!isLarge" />
+	<MobileProductFavorite v-if="!isLarge" />
 	<ProductCardBlocked class="no-box" v-if="true" />
-	<ProductCardService class="no-box" />
+	<ProductCardService v-if="isLarge" class="no-box" />
 	<ProductCardReview class="no-box" />
 	<ProductCardRelated class="no-box" />
 </template>
