@@ -11,6 +11,7 @@
 </script>
 
 <template>
+	
 	<div
 		v-if="!isLarge"
 		class="product-card-blocked__item"

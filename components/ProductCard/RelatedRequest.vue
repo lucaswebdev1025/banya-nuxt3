@@ -63,9 +63,7 @@
 <style lang="scss" scoped>
 	.card-related {
 		&__row {
-			@media screen and (max-width: 768px) {
-				flex-wrap: wrap;
-			}
+			
 		}
 		&__column {
 			display: flex;
