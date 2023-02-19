@@ -9,24 +9,26 @@
 			</div>
 			<img src="~/assets/img/product-mobile/copy.svg" alt="" />
 		</div>
-		<div class="card-adress__way">
-			<div class="card-adress__metro h4">Пражская <IconMetro /></div>
-			<div class="card-adress__walk h4">
-				<img src="~/assets/img/icon/run.svg" alt="" /> 13 мин
+		<div class="card-adress__path">
+			<div class="card-adress__way">
+				<div class="card-adress__metro h4">Пражская <IconMetro /></div>
+				<div class="card-adress__walk h4">
+					<img src="~/assets/img/icon/run.svg" alt="" /> 13 мин
+				</div>
 			</div>
-		</div>
-		<div class="card-adress__way">
-			<div class="card-adress__metro h4">
-				Озёрная <IconMetro class="green" />
+			<div class="card-adress__way">
+				<div class="card-adress__metro h4">
+					Озёрная <IconMetro class="green" />
+				</div>
+				<div class="card-adress__walk h4">
+					<img src="~/assets/img/icon/run.svg" alt="" /> 13 мин
+				</div>
 			</div>
-			<div class="card-adress__walk h4">
-				<img src="~/assets/img/icon/run.svg" alt="" /> 13 мин
-			</div>
-		</div>
-		<div class="card-adress__way">
-			<div class="card-adress__metro h4">Академическая <IconMetro /></div>
-			<div class="card-adress__walk h4">
-				<img src="~/assets/img/icon/run.svg" alt="" /> 13 мин
+			<div class="card-adress__way">
+				<div class="card-adress__metro h4">Академическая <IconMetro /></div>
+				<div class="card-adress__walk h4">
+					<img src="~/assets/img/icon/run.svg" alt="" /> 13 мин
+				</div>
 			</div>
 		</div>
 		<iframe
@@ -75,15 +77,15 @@
 			font-size: 1.6rem;
 		}
 
+		&__path {
+			margin-bottom: 4rem;
+		}
+
 		&__way {
 			display: flex;
 			align-items: center;
 			gap: 1.5rem;
 			margin-bottom: 1rem;
-
-			&:last-of-type {
-				margin-bottom: 4rem;
-			}
 		}
 
 		&__metro {
