@@ -27,7 +27,8 @@ useHead({ title: "Баня.ру – портал о банях и саунах �
     <div class="mobile-container">
       <div class="add-advert">+ Разместить объявление</div>
       <HomeMobileSearch/>
-      <LazyHomeMobileCatalog/>
+      <HomeMobileCatalog/>
+      <HomeMobileServices/>
     </div>
   </div>
 </template>
