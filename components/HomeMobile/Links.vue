@@ -89,7 +89,7 @@
     border-bottom: 0.1rem solid rgba(143, 153, 186, 0.2);
   }
   &__name {
-    color: $green-color;
+    color: #32BD1B;
     font-size: 1.6rem;
     line-height: 1.8rem;
   }
