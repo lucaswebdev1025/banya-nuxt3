@@ -62,6 +62,7 @@ swiper-slide {
 }
 .services {
   margin-top: 6.5rem;
+  overflow: hidden;
   &__title {
     font-weight: 700;
     font-size: 2.6rem;
@@ -72,7 +73,11 @@ swiper-slide {
     width: 100%;
     height: 100%;
     overflow: visible;
-    max-width: 90vw;
+    width: 90vw;
+    margin-left: calc(-50vw + 50%);
+    z-index: 50;
+    padding-left: 2rem;
+    height: auto;
   }
   &__item {
     display: flex;
