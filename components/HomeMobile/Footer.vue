@@ -55,10 +55,10 @@
   &__inner {
     padding: 0;
     margin-top: 4.9rem;
-    padding: 1.4rem 3.9rem 2.1rem 3.9rem;
+    padding: 1.4rem 3.9rem 3rem 3.9rem;
     background: #ffffff;
     box-shadow: 0px 6px 50px rgba(166, 175, 203, 0.16);
-    border-radius: 23px;
+    border-radius: 23px 23px 0 0;
     & button {
       display: flex;
       justify-content: center;
