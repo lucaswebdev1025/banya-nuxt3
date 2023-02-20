@@ -93,6 +93,7 @@
 	<ProductCardService class="no-box service-mobile" />
 	<ProductCardReview class="no-box review-mobile" />
 	<ProductCardRelated class="no-box related-mobile" />
+	<MobileProductAnnounce class="no-box" v-if="!isLarge" />
 </template>
 
 <style lang="scss" scoped>
