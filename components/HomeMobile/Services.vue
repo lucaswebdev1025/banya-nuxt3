@@ -66,6 +66,7 @@ swiper-slide {
     font-weight: 700;
     font-size: 2.6rem;
     line-height: 100%;
+    padding: 0 2rem;
   }
   &__inner {
     width: 100%;
