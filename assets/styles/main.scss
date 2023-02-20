@@ -116,15 +116,15 @@ li {
 	flex-direction: column;
 	min-height: 100vh;
 	margin: 0 auto;
+	@media screen and (max-width: 768px) {
+		margin-bottom: 9rem;
+	}
 }
 
 .wrapper-content {
 	display: flex;
 	flex: 1 0 auto;
 	margin-top: 10rem; // if header is fixed do mt: headerHeight
-	// @media screen and (max-width: $tableWidth) {
-	// 	margin-top: 90px;
-	// }
 }
 
 // badje
