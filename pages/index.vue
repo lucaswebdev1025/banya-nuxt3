@@ -28,6 +28,7 @@ useHead({ title: "Баня.ру – портал о банях и саунах �
     <HomeMobileSearch />
     <HomeMobileCatalog />
     <HomeMobileServices />
+    <HomeMobileAdvert/>
   </div>
 </template>
 
