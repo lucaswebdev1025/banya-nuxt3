@@ -1,9 +1,16 @@
 <script setup>
 	const breadcrumbs = ref(['Главная', 'Бани в городе Москва']);
+	const isLarge = ref(true);
+
+	onMounted(() => {
+		if (window.innerWidth <= 768) {
+			isLarge.value = false;
+		}
+	});
 </script>
 
 <template>
-	<div class="search-page">
+	<div class="search-page" v-if="isLarge">
 		<div class="container">
 			<Filter />
 		</div>
@@ -39,6 +46,7 @@
 			</div>
 		</div>
 	</div>
+	<MobileSearch v-else />
 </template>
 
 <style lang="scss" scoped>
