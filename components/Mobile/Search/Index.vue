@@ -127,7 +127,7 @@
 		padding: 2rem;
 		box-sizing: border-box;
 		&__inner {
-			min-height: 110vh;
+			min-height: 95vh;
 			position: relative;
 			overflow: hidden;
 		}
