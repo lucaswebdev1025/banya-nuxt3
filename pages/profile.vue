@@ -45,6 +45,17 @@
 	];
 
 	const modalVisible = ref(false);
+	const openModal = () => {
+		modalVisible.value = true;
+
+		document.body.classList.add('lock');
+	};
+
+	const closeModal = () => {
+		modalVisible.value = false;
+
+		document.body.classList.remove('lock');
+	};
 
 	definePageMeta({
 		layout: 'cabinet',
@@ -62,7 +73,9 @@
 				/>
 				<div class="card profile-card">
 					<div class="profile-card__content">
+						<IconArrow v-if="!isLarge" class="green rotate" />
 						<div class="profile-card__title h1">Профиль</div>
+						<IconShare v-if="!isLarge" class="black" />
 					</div>
 					<div class="profile-card__top">
 						<div class="profile-card__info">
@@ -86,7 +99,7 @@
 								</div>
 							</div>
 						</div>
-						<div class="nav">
+						<div class="nav" v-if="isLarge">
 							<div class="nav__inner">
 								<div
 									v-for="(item, idx) in tabs"
@@ -103,14 +116,28 @@
 						<div class="profile-card__btns">
 							<button
 								class="profile-card__btn btn btn-green"
-								@click="modalVisible = true"
+								@click="openModal"
 							>
 								Позвонить
 							</button>
 							<button class="profile-card__btn btn btn-white">Написать</button>
-							<button class="profile-card__share btn btn-white">
+							<button class="profile-card__share btn btn-white" v-if="isLarge">
 								<IconShare class="black" />
 							</button>
+						</div>
+						<div class="nav" v-if="!isLarge">
+							<div class="nav__inner">
+								<div
+									v-for="(item, idx) in tabs"
+									:key="item"
+									@click="activeTab = idx + 1"
+									:class="[activeTab == idx + 1 ? 'nav__item_active' : '']"
+									class="nav__item"
+								>
+									{{ item.text }}
+									<span v-if="item.notif">{{ item.notif }}</span>
+								</div>
+							</div>
 						</div>
 					</div>
 					<div class="profile-card__row">
@@ -146,10 +173,7 @@
 					</div>
 				</div>
 			</div>
-			<ProfileModal
-				:visible="modalVisible"
-				@close-modal="modalVisible = false"
-			/>
+			<ProfileModal :visible="modalVisible" @close-modal="closeModal" />
 		</div>
 	</div>
 </template>
@@ -216,23 +240,46 @@
 	}
 
 	.profile-card {
+		@media screen and (max-width: 768px) {
+			border-radius: 0 0 2.3rem 2.3rem;
+		}
 		&__title {
 			color: $mainFontColor;
 			margin-bottom: 2.5rem;
+			@media screen and (max-width: 768px) {
+				margin: 0;
+			}
 		}
 		&__content {
+			@media screen and (max-width: 768px) {
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+				margin-bottom: 2rem;
+			}
 		}
 
 		&__top {
 			display: flex;
 			gap: 1rem;
 			margin-bottom: 7rem;
+
+			@media screen and (max-width: 768px) {
+				flex-direction: column;
+				margin-bottom: 2rem;
+			}
 		}
 
 		&__info {
 			display: flex;
 			gap: 1rem;
 			margin-right: 5rem;
+
+			@media screen and (max-width: 768px) {
+				align-items: center;
+				margin: 0;
+				margin-bottom: 3.5rem;
+			}
 		}
 
 		&__avatar {
@@ -242,11 +289,19 @@
 			display: flex;
 			align-items: center;
 			gap: 1.8rem;
+
+			@media screen and (max-width: 768px) {
+				margin-bottom: 1.5rem;
+			}
 		}
 
 		&__btn {
 			padding-top: 1.5rem;
 			padding-bottom: 1.5rem;
+
+			@media screen and (max-width: 768px) {
+				flex: 1;
+			}
 		}
 
 		&__share {
@@ -280,6 +335,10 @@
 		&__name {
 			margin-bottom: 0.5rem;
 			color: $mainFontColor;
+
+			@media screen and (max-width: 768px) {
+				margin-bottom: 0.5rem;
+			}
 		}
 
 		&__status {
@@ -289,6 +348,10 @@
 		&__desc {
 			color: $secondary-color;
 			margin-bottom: 1.1rem;
+
+			@media screen and (max-width: 768px) {
+				margin-bottom: 0.5rem;
+			}
 		}
 	}
 

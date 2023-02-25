@@ -52,12 +52,20 @@
 		left: 50%;
 		z-index: 1000;
 		transform: translate(-50%, -50%);
+		@media screen and (max-width: 768px) {
+			height: 100%;
+		}
 		&__content {
 			max-width: 58rem;
 			background-color: $mainFontColor;
 			padding: 5rem 13rem;
 			box-shadow: 0px 4px 63px rgba(0, 0, 0, 0.25);
 			border-radius: 23px;
+
+			@media screen and (max-width: 768px) {
+				max-width: 100%;
+				height: 100%;
+			}
 
 			& * {
 				color: white;
