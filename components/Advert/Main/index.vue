@@ -47,6 +47,8 @@
 			<AdvertMainZalDiscount />
 			<AdvertMainZalService />
 			<AdvertMainZalBooking />
+			<AdvertMainTotal/>
+			<AdvertMainTariff/>
 		</div>
 	</div>
 </template>
